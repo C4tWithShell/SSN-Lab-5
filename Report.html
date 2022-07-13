@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        SSN Lab 5 - TLS - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit;overflow:visible}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.figma{display:table;position:relative;width:100%;padding-bottom:56.25%}.figma iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;border:1px solid #eee}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{height:40px;padding:10px 4px;border-top-left-radius:0;border-bottom-left-radius:0}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:20px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:50%;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;text-decoration:none;padding-left:22px}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em;font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="SSN-Lab-5---TLS" data-id="SSN-Lab-5---TLS"><a class="anchor hidden-xs" href="#SSN-Lab-5---TLS" title="SSN-Lab-5---TLS"><span class="octicon octicon-link"></span></a><span>SSN Lab 5 - TLS</span></h1><p><strong><span>Name: Vladimir Shelkovnikov</span></strong></p><hr><h2 id="Task-1---TLS-handshake" data-id="Task-1---TLS-handshake"><a class="anchor hidden-xs" href="#Task-1---TLS-handshake" title="Task-1---TLS-handshake"><span class="octicon octicon-link"></span></a><span>Task 1 - TLS handshake:</span></h2><div class="alert alert-success">
+<ol>
+<li><span>Using openssl, establish a TLS connection to </span><a href="http://facebook.com" target="_blank" rel="noopener"><span>facebook.com</span></a><span>. Look at the parameters of your connection and briefly describe them in your report.</span></li>
+</ol>
+</div><hr><p><span>To be able to connect to </span><a href="http://facebook.com" target="_blank" rel="noopener"><span>facebook.com</span></a><span>, I have to use the command </span><code>openssl s_client</code><span>. It implements a generic SSL/TLS client that connects to a remote host using SSL/TLS.</span></p><p><span>I used </span><code>openssl s_client --connect www.facebook.com:443</code><span> as shown in Figure 1.</span></p><center>
+<p><img src="https://i.imgur.com/6GZyW2J.png" alt="" loading="lazy"><br>
+<span>Figure 1 - The result of the command execution</span></p>
+</center><p><span>The first couple of lines display information about the server certificate.</span></p><p><span>The next section (Certificate chain) in the output lists all the certificates presented by the server in the order in which they were delivered (Certificate chain).</span></p><p><span>For each certificate, the first line shows the subject and the second line shows the issuer information.</span></p><p><span>The next element in the output is the server certificate (Figure 2).</span></p><center>
+<p><img src="https://i.imgur.com/RLQkk1W.png" alt="" loading="lazy"><br>
+<span>Figure 2 - Server certificate</span></p>
+</center><p><span>There is a certificate encoded in base64. And text information about its subject and issuer.</span></p><p><span>The last part contains a lot of information about the TLS connection, most of which is self-explanatory (Figure 3).</span></p><center>
+<p><img src="https://i.imgur.com/IpzcKiE.png" alt="" loading="lazy"><br>
+<span>Figure 3 - Information about the TLS connection</span></p>
+</center><p><span>The most important information here is the protocol version (TLS 1.3) and cipher suite used (TLS_CHACHA20_POLY1305_SHA256).</span></p><p><span>Protocol information appears in two locations:</span></p><ol>
+<li><span>New, TLSv1.3 …- describes the minimum protocol requirement with the negotiated cipher suite;</span></li>
+<li><span>Protocol: TLSv1.3 - points to the actual protocol version currently being negotiated.</span></li>
+</ol><p><span>I also see that the server has given me a session ID and a TLS session ticket (a way to resume sessions without saving the server state) and that secure renegotiation is supported.</span></p><p><span>Let’s make another query and compare it with the first one (Figure 4).</span></p><center>
+<p><img src="https://i.imgur.com/FqWkVo7.png" alt="" loading="lazy"><br>
+<span>Figure 4 - The second TLS connection</span></p>
+</center><p><span>Thus, the session ID, Resumption PSK, and TLS session ticket are unique for each session. PSK-based authentication happens as a side effect of key exchange.</span></p><hr><div class="alert alert-success">
+<ol start="2">
+<li><span>Establish the connection again and intercept TLS handshake using tcpdump/wireshark. Describe all packets involved in the TLS connection in your report.</span></li>
+</ol>
+</div><p><span>I again established the connection with </span><a href="http://facebook.com" target="_blank" rel="noopener"><span>facebook.com</span></a><span>, but this time I intercept the TLS handshake using wireshark (Figure 5).</span></p><center>
+<p><img src="https://i.imgur.com/yYXJMrj.png" alt="" loading="lazy"><br>
+<span>Figure 5 - Intercepted TLS handshake using wireshark</span></p>
+</center><p><span>The first packets are DNS because I have set the host as the DNS name. So in order to connect to it, I need to convert DNS to an IP address.</span><br>
+<span>Then I connected with </span><a href="http://facebook.com" target="_blank" rel="noopener"><span>facebook.com</span></a><span> (IP 157.240.205.35) using TCP (Packets 27, 29, 60).</span></p><div class="alert alert-info">
+<p><span>TLS works over TCP.</span></p>
+</div><p><span>Then there is the initialization of the TLS handshake. After installing TCP, the client sends the specification to the server in plain text. The server approves the version of the protocol used, selects the encryption method from the provided list, attaches its certificate, and sends a response to the client.</span><br>
+<span>The client verifies the sent certificate and initiates either RSA or Diffie-Hellman key exchange.</span></p><p><span>The server processes the message sent by the client, verifies the MAC, and sends the </span><code>Finished</code><span> message to the client in encrypted form.</span><br>
+<span>The client decrypts the received message, checks the MAC, and if everything is fine, the connection is considered established and the application data exchange begins.</span></p><hr><div class="alert alert-success">
+<ol start="3">
+<li><span>What version of TLS is used? Describe which versions are not safe to use and under which conditions.</span></li>
+<li><span>What ciphersuite is used? Make a small list of ciphersuite that you would recommend to use and why.</span></li>
+</ol>
+</div><hr><p><span>Here I use TLSv1.3. This is the best solution at the moment.</span></p><p><span>SSL2, SSL3, Tlsv1.1 contain serious vulnerabilities, so it is strongly recommended never to use them.</span></p><p><span>TLSv1.2 also contains vulnerabilities (vulnerable ciphers), but it can be used for older systems that do not support TLSv1.3.</span></p><p><span>In my case, the cipher suite is </span><code>TLS_CHACHA20_POLY1305_SHA256</code><span>.</span></p><div class="alert alert-info">
+<p><span>TLS - Protocol.</span><br>
+<span>ChaCha stream cipher and Poly1305 authenticator (CHACHA20_POLY1305) - Encryption.</span><br>
+<span>SHA256 - Hash.</span></p>
+</div><hr><p><span>Let’s start with TLSv1.3. So, the five ciphersuites that TLS 1.3 supports:</span></p><ol>
+<li><span>TLS_AES_128_GCM_SHA256;</span></li>
+<li><span>TLS_AES_256_GCM_SHA384;</span></li>
+<li><span>TLS_CHACHA20_POLY1305_SHA256;</span></li>
+<li><span>TLS_AES_128_CCM_SHA256;</span></li>
+<li><span>TLS_AES_128_CCM_8_SHA256.</span></li>
+</ol><p><span>All of them are AEAD (authenticated encryption with attached data). This means that they are doing several things at once at the same time:</span></p><ul>
+<li><span>Encrypt data with a key. This preserves the confidentiality of the data;</span></li>
+<li><span>Authenticate data using a key. This preserves integrity;</span></li>
+<li><span>Authorize (again, using a key) unencrypted data. This gives the same guarantees in terms of integrity and the ability to create valid messages for any data that needs to be validated.</span></li>
+</ul><p><span>The CCM mode has flaws in its design. Therefore, I cannot recommend the 4th and 5th options.</span></p><p><span>Among these ciphersuites best solutions are TLS_AES_256_GSM_SHA384 and TLS_CHACHA20_POLY1305_SHA256 in order of speed preference.</span></p><p><span>There are many ciphers in TLSv1.2. But I would like to recommend the following options:</span></p><ol>
+<li><span>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384;</span></li>
+<li><span>TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256;</span></li>
+<li><span>TLS_DHE_RSA_WITH_AES_256_GCM_SHA384.</span></li>
+</ol><hr><h2 id="Task-2---Man-In-The-Middle" data-id="Task-2---Man-In-The-Middle"><a class="anchor hidden-xs" href="#Task-2---Man-In-The-Middle" title="Task-2---Man-In-The-Middle"><span class="octicon octicon-link"></span></a><span>Task 2 - Man In The Middle</span></h2><div class="alert alert-success">
+<ol>
+<li><span>Setup a TLS proxy - mitmproxy</span><br>
+<span>a. There are several modes it can operate. You should use transparent mode.</span><br>
+<span>b. Describe setup steps and show that are able to read transmitted data.</span></li>
+</ol>
+</div><hr><p><span>I installed mitmproxy using </span><code>sudo apt install mitmproxy</code><span>.</span></p><p><span>On Linux, mitmproxy integrates with the iptables redirection mechanism to achieve transparent mode. So I need to enable IP forwarding.</span></p><pre><code>sudo sysctl -w net.ipv4.ip_forward=1
+sudo sysctl -w net.ipv6.conf.all.forwarding=1
+</code></pre><p><span>This makes sure that my workstation forwards packets instead of rejecting them.</span></p><blockquote>
+<p><span>This configuration will be reset across reboots.</span></p>
+</blockquote><p><span>The next step is to create an iptables ruleset that redirects the necessary traffic from the VM to mitmproxy.</span></p><pre><code>sudo iptables -t nat -A PREROUTING -i virbr0 -p tcp --dport 443 -j REDIRECT --to-port 8080
+</code></pre><p><span>Now let’s fire up mitmproxy - </span><code>mitmproxy --mode transparent</code></p><p><span>But it doesn’t work because I will get an error message as shown in Figure 6.</span></p><center>
+<p><img src="https://i.imgur.com/Rp2AC7l.png" alt="" loading="lazy"><br>
+<span>Figure 6 - Error message</span></p>
+</center><p><span>To solve it I need to go to </span><code>http://mitm.it/</code><span>. Here I downloaded the mitmproxy root certificate. To solve the problem, I need to add it to my VM.</span></p><p><span>I created new directory in </span><code>/usr/local/share/ca-certificates</code><span>:</span><br>
+<code>sudo mkdir /usr/local/share/ca-certificates/extra</code><span>.</span></p><p><span>The format of the certificate is PEM, so I need to convert it to crt - </span><code>openssl x509 -in mitmproxy-ca-cert.pem -inform PEM -out mitmproxy.crt</code><span>. I placed this file in the created directory.</span></p><p><span>Then I force Ubuntu to add the file .crt in ca-certificates - </span><code> sudo dpkg-reconfigure ca-certificates</code><span> (Figure 7).</span></p><center>
+<p><img src="https://i.imgur.com/z62di1o.png" alt="" loading="lazy"><br>
+<span>Figure 7 - Added certificate</span></p>
+</center><p><span>Let’s test mitmproxy (Figure 8).</span></p><center>
+<p><img src="https://i.imgur.com/ni8WrVB.png" alt="" loading="lazy"><br>
+<span>Figure 8 - mitmproxy works</span></p>
+</center><p><span>OK, it works. Figure 9 shows the beginning of the TLS connection.</span></p><center>
+<p><img src="https://i.imgur.com/aayBOIO.png" alt="" loading="lazy"><br>
+<span>Figure 9 - TLS Connection information</span></p>
+</center><p><span>There is now a new certificate chain here, where </span><code>*.facebook.com</code><span> signed with the </span><code>mitmproxy</code><span> root certificate.</span></p><hr><div class="alert alert-success">
+<ol start="2">
+<li><span>Intercept TLS handshake before proxy and after proxy and describe how MITM is performed.</span><br>
+<span>a. When do you think TLS proxy is used for security purposes in the industry?</span><br>
+<span>b. What are techniques that are used to protect applications (desktop, web, mobile, etc.) from TLS proxying?</span></li>
+</ol>
+</div><p><span>Let’s intercept the TLS handshake before proxy (Figure 10) and after proxy (Figure 11) and see what is the difference between traffic.</span></p><center>
+<p><img src="https://i.imgur.com/hM55uN0.png" alt="" loading="lazy"><br>
+<span>Figure 10 - Traffic before the proxy</span></p>
+<p><img src="https://i.imgur.com/NovYzii.png" alt="" loading="lazy"><br>
+<span>Figure 11 - Traffic after the proxy</span></p>
+</center><p><span>Here new TCP connection was added. 192.168.122.152 sends a request to 192.168.122.1 (proxy), which then sends it to Facebook. But it will still pass along my IP address, identifying me to the webserver (transparent mode).</span></p><hr><blockquote>
+<p><span>a. When do you think TLS proxy is used for security purposes in the industry?</span></p>
+</blockquote><p><span>TLS provides encryption and authenticity of communication over the Internet.</span><br>
+<span>A connection is being intercepted by a TLS proxy when it inspects incoming traffic to block malicious connections.</span><br>
+<span>A high-speed redundant network is used to run the TLS proxy to protect against DDoS attacks.</span><br>
+<span>It also provides a high level of anonymity (the network behind a proxy is hidden), while maintaining the convenience and simplicity for users inherent in proxy servers.</span></p><hr><blockquote>
+<p><span>b. What are techniques that are used to protect applications (desktop, web, mobile, etc.) from TLS proxying?</span></p>
+</blockquote><p><span>To detect a proxy server, we have to get the certificate that the client actually receives. Such as a web browser, and then compare it with the valid certificate presented by the server that the client is contacting. The discrepancy indicates that some proxy server, benevolent or malicious, intercepts client traffic to this particular server.</span></p><p><span>The client only trusts the root certificate authority stored locally, and any certificate/CA must be issued directly or indirectly by that CA. This proxy certificate authority must be explicitly installed in the browser/OS.</span></p><p><span>Thus while you cannot make a proxy to not intercept and modify the TLS connection this modification will be detected immediately and the connection will be stopped before any data are transferred. Only if you explicitly trust the proxy by importing the proxy CA the TLS interception is possible.</span></p><p><span>In mobile devices, a mechanism called SSL pinning is used for this purpose.</span><br>
+<span>The browser also uses a locally stored certificate</span></p><hr><div class="alert alert-success">
+<ol start="3">
+<li><span>Proxy allows you not only to read data, but also modify it on the fly. Think of a scenario when it can be dangerous and try to demonstrate that.</span></li>
+</ol>
+</div><p><span>Let’s change the wget response from </span><a href="http://google.com" target="_blank" rel="noopener"><span>google.com</span></a><span>. To do this, I launched mitmproxy, then pressed </span><code>I</code><span> and typed </span><code>https://www.google.com</code><span> (Figure 12).</span></p><center>
+<p><img src="https://i.imgur.com/7cK7Q0g.png" alt="" loading="lazy"><br>
+<span>Figure 12 - Interception </span><a href="https://www.google.com" target="_blank" rel="noopener"><span>https://www.google.com</span></a></p>
+</center><p><span>Then I launched </span><code>wget https://www.google.com</code><span> in VM as shown in Figure 13.</span></p><center>
+<p><img src="https://i.imgur.com/PUYtq11.png" alt="" loading="lazy"><br>
+<span>Figure 13 - Request to </span><a href="http://google.com" target="_blank" rel="noopener"><span>google.com</span></a></p>
+</center><p><span>He sent a request but got no response, but I got a new request to mitmproxy as shown in Figure 14.</span></p><center>
+<p><img src="https://i.imgur.com/Pp20AeU.png" alt="" loading="lazy"><br>
+<span>Figure 14 - Request to mitmproxy</span></p>
+</center><p><span>I clicked on it, went to the response, pressed </span><code>e</code><span>, and selected option </span><code>a</code><span>. This will allow me to change the body of the response. I inserted the Yandex homepage into it (Figure 15).</span></p><center>
+<p><img src="https://i.imgur.com/ejT4yv7.png" alt="" loading="lazy"><br>
+<span>Figure 15 - Modified response</span></p>
+</center><p><span>Then I press </span><code>a</code><span> to send it. Figure 16 shows that the VM has received a page.</span></p><center>
+<p><img src="https://i.imgur.com/qH2Ktat.png" alt="" loading="lazy"><br>
+<span>Figure 16 - The VM received a response</span></p>
+</center><p><span>I copied it to my workstation using the scp command to be able to view the contents (Figure 17).</span></p><center>
+<p><img src="https://i.imgur.com/h9S64AC.png" alt="" loading="lazy"><br>
+<span>Figure 17 - Content of the response</span></p>
+</center><p><span>It works but does not contain some advertising content (because it is dynamic) from a real Yandex page.</span></p><hr><h2 id="Task-3---x509" data-id="Task-3---x509"><a class="anchor hidden-xs" href="#Task-3---x509" title="Task-3---x509"><span class="octicon octicon-link"></span></a><span>Task 3 - x509</span></h2><div class="alert alert-success">
+<p><span>By default, mitmproxy uses its own certificate authority to issue certificates and if you inspect the certificate chain (f.e in browser) you will see that it looks suspicious.</span><br>
+<span>Here you will try to create a certificate chain that looks almost the same as the original certificate chain for a website and, alongside, get familiar with common attributes that are used in x509 certificates.</span></p>
+<ol>
+<li><span>Obtain a cert chain for </span><a href="http://www.facebook.com" target="_blank" rel="noopener"><span>www.facebook.com</span></a><span> (f.e. using openssl):</span><br>
+<span>a. Does the cert chain contain the root cert? Where are trusted certs stored?</span><br>
+<span>b. Extract certs and place: root CA in root.crt, intermediate CA in int_ca.crt, and server cert in server.crt.</span></li>
+</ol>
+</div><hr><p><span>I can get the certificate chain using the following command - </span><code>openssl s_client -showcerts -connect www.facebook.com:443</code><span>. This gives me two certificates, which are shown in Figures 18 and 19.</span></p><center>
+<p><img src="https://i.imgur.com/3mUVOrr.png" alt="" loading="lazy"><br>
+<span>Figure 18 - Server certificate</span></p>
+<p><img src="https://i.imgur.com/JHNRAQZ.png" alt="" loading="lazy"><br>
+<span>Figure 19 - Intermidiate certificate</span></p>
+</center><p><span>But it does not contain a root certificate. I found it locally in the ca-certificates directory (Figure 20)</span></p><center>
+<p><img src="https://i.imgur.com/NSW039O.png" alt="" loading="lazy"><br>
+<span>Figure 20 - Root certificate</span></p>
+</center><blockquote>
+<p><span>The client only trusts the root certificate authority stored locally, and any certificate/CA must be issued directly or indirectly by that CA. This proxy certificate authority must be explicitly installed in the browser/OS (directory ca-certificates - /usr/share/ca-certificate/mozilla).</span></p>
+</blockquote><hr><div class="alert alert-success">
+<ol start="2">
+<li><span>Using the contents of obtained certificates, create your own chain that mimics the original one, they should look almost identical.</span><br>
+<span>a. Document your steps and describe the meaning of certificates attributes.</span><br>
+<span>b. Include created certificate chain into the report as appendix - both in base64 and human readable form.</span></li>
+<li><span>BONUS: Provide a server key and certificate to mitmproxy and try to visit </span><a href="http://www.facebook.com" target="_blank" rel="noopener"><span>www.facebook.com</span></a><span> using the browser and check how the certificate chain is looking now (do not forget to add the created root CA certificate to the trusted store).</span></li>
+</ol>
+</div><p><span>mitmproxy contains an algorithm that creates a server certificate (for example, *.facebook.com). So I am going to use it. But first I need to create my own Root and Intermediate CAs.</span></p><hr><div class="alert alert-danger">
+<p><span>Below I have shown the process of creating your own certificate, which is not identical to facebook. I saw this later, but I created a similar certificate chain, which I included as facebook_chain.pem.</span></p>
+</div><hr><center>
+<h3 id="Root-certificate" data-id="Root-certificate"><a class="anchor hidden-xs" href="#Root-certificate" title="Root-certificate"><span class="octicon octicon-link"></span></a><span>Root certificate</span></h3>
+</center><hr><h4 id="Creating-the-directory-structure-of-the-OpenSSL-Root-CA" data-id="Creating-the-directory-structure-of-the-OpenSSL-Root-CA"><a class="anchor hidden-xs" href="#Creating-the-directory-structure-of-the-OpenSSL-Root-CA" title="Creating-the-directory-structure-of-the-OpenSSL-Root-CA"><span class="octicon octicon-link"></span></a><span>Creating the directory structure of the OpenSSL Root CA</span></h4><p><span>I have already created a </span><code>gotls</code><span> directory, which I’m going to use as a directory structure to store certificates.</span></p><p><span>There I created two directories - - </span><code>mkdir certs private</code><span>.</span></p><div class="alert alert-info">
+<p><code>certs</code><span> - This will be used to store copies of all certificates that I issue with CA.</span></p>
+<p><code>private</code><span> - This will be used to store a copy of the CA certificate’s private key.</span></p>
+</div><p><span>I also need two more files:</span></p><ol>
+<li><code>echo 01 &gt; serial number</code></li>
+</ol><p><span>The </span><code>serial</code><span> file is used to track the last serial number that was used to issue the certificate.</span></p><blockquote>
+<p><span>Two certificates must be never issued with the same serial number from the same certification authority.</span></p>
+</blockquote><ol start="2">
+<li><code>touch index.txt</code></li>
+</ol><p><span>An </span><code>index.txt</code><span> is a file that is a kind of database that keeps track of certificates issued by a Certificate Authority.</span></p><blockquote>
+<p><span>Since no certificates have been issued at the moment, and OpenSSL requires the file to exist, we’ll just create an empty file.</span></p>
+</blockquote><p><span>Figure 21 shows the directory structure</span></p><center>
+<p><img src="https://i.imgur.com/mFabJzH.png" alt="" loading="lazy"><br>
+<span>Figure 21 - The directory structure</span></p>
+</center><hr><h4 id="Configuring-opensslcnf-for-the-Root-CA-Certificate" data-id="Configuring-opensslcnf-for-the-Root-CA-Certificate"><a class="anchor hidden-xs" href="#Configuring-opensslcnf-for-the-Root-CA-Certificate" title="Configuring-opensslcnf-for-the-Root-CA-Certificate"><span class="octicon octicon-link"></span></a><span>Configuring openssl.cnf for the Root CA Certificate</span></h4><p><span>To create my certificates, I created an </span><code>openssl.cnf</code><span> configuration file, which I copied from </span><code>/etc/ssl</code><span>. So let’s see what I have changed in it.</span></p><p><span>The </span><strong><span>[ CA_default ]</span></strong><span> block is the name of the section containing the default CA configuration. There I changed the following lines:</span></p><pre><code>dir = /home/st12/Desktop/gotls
+certificate = $dir/certs/ca_cert.pem
+private_key = $dir/private/ca_key.pem
+</code></pre><p><span>Only the dir option was important here, the other two are optional.</span></p><p><span>The values under the </span><strong><span>[ req ]</span></strong><span> section are applied when creating Certificate Signing Requests (CSR) or Certificates. The x509_extensions key specifies the name of a section that contains the extensions that we want to be included in the certificate.</span></p><pre><code>[ req ]
+default_bits            = 4096
+default_md              = sha256
+default_keyfile         = private_key.pem
+distinguished_name      = req_distinguished_name
+x509_extensions         = st12_ca
+string_mask             = nombstr
+</code></pre><p><span>The </span><strong><span>[ req_distinguished_name ]</span></strong><span> key defines how OpenSSL obtains the information needed to fill in the distinctive name of the certificate. I have given a few default values to simplify the process.</span></p><pre><code>[ req_distinguished_name ]
+countryName_default             = RU
+stateOrProvinceName_default     = Tatarstan
+localityName_default            = Innopolis
+0.organizationName_default      = Innopolis University
+</code></pre><p><span>Then I configured the extensions that I would use with the openssl certificate chain. I will use the </span><code>st12_ca</code><span> extension to create the root CA certificate and the </span><code>st12_intermediate_ca</code><span> extension for the intermediate CA certificate.</span></p><pre><code>[ st12_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid:always,issuer
+basicConstraints = critical,CA:true
+
+[ st12_intermediate_ca ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true, pathlen:1
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+</code></pre><hr><h4 id="Creating-the-Private-Key-of-the-Root-Certification-Authority" data-id="Creating-the-Private-Key-of-the-Root-Certification-Authority"><a class="anchor hidden-xs" href="#Creating-the-Private-Key-of-the-Root-Certification-Authority" title="Creating-the-Private-Key-of-the-Root-Certification-Authority"><span class="octicon octicon-link"></span></a><span>Creating the Private Key of the Root Certification Authority</span></h4><blockquote>
+<p><span>By creating a private key for the root certificate authority certificate, I have the option to either use encryption for the private key or create a key without any encryption.</span></p>
+</blockquote><p><span>I created a CA root key using 4096 bits without encryption:</span><br>
+<code>openssl genrsa  -out private/ca_key.pem 4096</code><span> .</span></p><hr><h4 id="Creating-a-Root-CA-Certificate" data-id="Creating-a-Root-CA-Certificate"><a class="anchor hidden-xs" href="#Creating-a-Root-CA-Certificate" title="Creating-a-Root-CA-Certificate"><span class="octicon octicon-link"></span></a><span>Creating a Root CA Certificate</span></h4><p><span>To create a root CA certificate (</span><code>ca_cert.pem</code><span>), I need to use the root CA key (</span><code>ca_key.pem</code><span>).</span></p><p><span>I’ll give it 12 years before it expires.</span></p><blockquote>
+<p><span>Once the root certificate expires, all certificates signed by the CA become invalid.</span></p>
+</blockquote><p><span>I also specified the configuration and extensions for it as shown in Figure 22.</span></p><p><code>openssl req -new -x509 -days 4380 -config openssl.cnf -extensions st12_ca -key private/ca_key.pem -out certs/ca_cert.pem</code></p><center>
+<p><img src="https://i.imgur.com/83VfQlJ.png" alt="" loading="lazy"><br>
+<span>Figure 22 - Creating the Root CA certificate</span></p>
+</center><p><span>I can see it in human-readable format with the command </span><code>openssl x509 -in ./certs/ca_cert.pem -inform PEM -noout -text</code><span> (Figure 23).</span></p><center>
+<p><img src="https://i.imgur.com/f6xAkYA.png" alt="" loading="lazy"><br>
+<span>Figure 23 - Root certificate</span></p>
+</center><p><span>The Signature Algorithm - SHA256 with RSA Encryption is used.</span><br>
+<span>The dates of certificate validity from today (11.11.21) + 12 years = 8.11.33</span><br>
+<span>The Public-Key bit length = 4096</span><br>
+<span>The Issuer and the Subject are me.</span></p><p><span>Let’s move on to the intermediate certificate.</span></p><hr><center>
+<h3 id="Intermediate-certificate" data-id="Intermediate-certificate"><a class="anchor hidden-xs" href="#Intermediate-certificate" title="Intermediate-certificate"><span class="octicon octicon-link"></span></a><span>Intermediate certificate</span></h3>
+</center><hr><h4 id="Preparation" data-id="Preparation"><a class="anchor hidden-xs" href="#Preparation" title="Preparation"><span class="octicon octicon-link"></span></a><span>Preparation</span></h4><p><span>I have created a new directory for intermediate certificates. And repeated the same steps as for the directory structure of the root certificate.</span></p><pre><code>mkdir certs csr private
+touch index.txt
+echo 01 &gt; serial
+echo 01 &gt; ./crlnumber
+</code></pre><blockquote>
+<p><span>crlnumber is used to keep track of certificate revocation lists.</span><br>
+<span>csr - This will be used to store a copy of the Certificate Signing Request.</span></p>
+</blockquote><p><span>Then I copied the </span><code>openssl.conf</code><span> used for my root certificate to the intermediate directory.  Then I changed some parameters in it, as shown below:</span></p><pre><code>dir = /home/st12/Desktop/tls/intermediate
+certificate = $dir/certs/intermediate_ca_cert.pem
+private_key = $dir/private/intermediate_ca_key.pem
+policy = policy_anything
+</code></pre><h4 id="Generating-an-Intermediate-CA-key-and-CSR" data-id="Generating-an-Intermediate-CA-key-and-CSR"><a class="anchor hidden-xs" href="#Generating-an-Intermediate-CA-key-and-CSR" title="Generating-an-Intermediate-CA-key-and-CSR"><span class="octicon octicon-link"></span></a><span>Generating an Intermediate CA key and CSR</span></h4><p><span>Generate intermediate CA key (</span><code>ca-intermediate.key</code><span>) using openssl genrsa:</span></p><p><code>openssl genrsa  -out intermediate/private/intermediate_ca_key.pem 4096</code></p><p><span>After that, I used this key to create a certificate signing request (CSR) as shown in Figure 24:</span></p><p><code>openssl req -new -sha256 -config intermediate/openssl.cnf  -key intermediate/private/intermediate_ca_key.pem -out intermediate/csr/intermediate_csr.pem</code></p><center>
+<p><img src="https://i.imgur.com/jr1Ynko.png" alt="" loading="lazy"><br>
+<span>Figure 24 - Certificate signing request</span></p>
+</center><hr><h4 id="Signing-and-generating-an-intermediate-CA-certificate" data-id="Signing-and-generating-an-intermediate-CA-certificate"><a class="anchor hidden-xs" href="#Signing-and-generating-an-intermediate-CA-certificate" title="Signing-and-generating-an-intermediate-CA-certificate"><span class="octicon octicon-link"></span></a><span>Signing and generating an intermediate CA certificate</span></h4><p><span>To create an intermediate certificate I used CSR as shown in Figure 25:</span></p><p><code>openssl ca -config openssl.cnf -extensions st12_intermediate_ca -days 2190 -notext -batch -in intermediate/csr/intermediate_csr.pem -out intermediate/certs/intermediate_ca_cert.pem</code></p><center>
+<p><img src="https://i.imgur.com/IGC78nj.png" alt="" loading="lazy"><br>
+<span>Figure 25 - Generating the intermediate certificate</span></p>
+</center><p><span>Then I verified the intermediate certificate against the root certificate as shown in Figure 26:</span><br>
+<code>openssl verify -CAfile certs/ca_cert.pem intermediate/certs/intermediate_ca_cert.pem</code></p><center>
+<p><img src="https://i.imgur.com/VEBeOlC.png" alt="" loading="lazy"><br>
+<span>Figure 26 - Verification of the intermediate certificate</span></p>
+</center><p><span>An OK indicates that the chain of trust is intact.</span></p><hr><center>
+<h3 id="Server-certificate" data-id="Server-certificate"><a class="anchor hidden-xs" href="#Server-certificate" title="Server-certificate"><span class="octicon octicon-link"></span></a><span>Server certificate</span></h3>
+</center><hr><p><span>I have created a similar directory structure for the server. Then I generated the server’s private key: </span><code>openssl genrsa -out private/server_key.pem 4096</code><span>.</span></p><p><span>After that, I created CSR: </span><code>openssl req -new -key private/server_key.pem -out csr/server.csr</code><span> (Figure 27).</span></p><center>
+<p><img src="https://i.imgur.com/hAVahSw.png" alt="" loading="lazy"><br>
+<span>Figure 27 - Certificate signing request</span></p>
+</center><p><span>Figure 28 shows the configuration file.</span></p><center>
+<p><img src="https://i.imgur.com/qQsrH0S.png" alt="" loading="lazy"><br>
+<span>Figure 28 - Configuration file for server certificate</span></p>
+</center><p><span>Then I merged the intermediate and root certificates:</span><br>
+<code>cat ../intermediate/certs/intermediate_ca_cert.pem ../certs/ca_cert.pem &gt; chain2.pem</code></p><p><span>finally I created a server certificate (Figure 29):</span></p><p><code>openssl x509 -req -in csr/server.csr -CA chain2.pem -CAkey ../intermediate/private/intermediate_ca_key.pem -out certs/server.pem -CAcreateserial -days 365 -sha256 -extfile server.cnf</code></p><center>
+<p><img src="https://i.imgur.com/76SonAJ.png" alt="" loading="lazy"><br>
+<span>Figure 29 - Server certificate</span></p>
+</center><p><span>I created certificate chain with following command:</span><br>
+<code>cat private/server_key.pem certs/server.pem chain2.pem &gt; chain.pem</code><span>.</span></p><p><span>I have included this file in the application as </span><strong><span>chain.pem</span></strong><span> (but there is no key in it).</span></p><hr><center>
+<h3 id="Certificate-Chain" data-id="Certificate-Chain"><a class="anchor hidden-xs" href="#Certificate-Chain" title="Certificate-Chain"><span class="octicon octicon-link"></span></a><span>Certificate Chain</span></h3>
+</center><hr><p><span>As I said earlier, I’m going to use mitmproxy to create a server certificate. This solution will allow me to create a chain for any server.</span><br>
+<span>To do this, I need to run the following commands:</span></p><pre><code>//Creating a new directory for mitmproxy
+mkdir mitmproxy
+cd mitmproxy/
+//Copying the intermediate key and certificate
+cp ../intermediate/certs/intermediate_ca_cert.pem mitmproxy-ca-cert.pem
+cp ../intermediate/private/intermediate_ca_key.pem mitmproxy-ca-key.pem
+//Creating the necessary files
+touch mitmproxy-ca.pem
+cat mitmproxy-ca-key.pem &gt;&gt; mitmproxy-ca.pem
+cat mitmproxy-ca-cert.pem &gt;&gt; mitmproxy-ca.pem
+// Creating symbolic link
+ln -s mitmproxy-ca-cert.pem mitmproxy-ca-cert.cer
+// Creating PKCS#12 file
+openssl pkcs12 -export -out mitmproxy-ca-cert.p12 -inkey mitmproxy-ca-key.pem -in mitmproxy-ca-cert.pem -password pass:k1ll
+// Creating an archive
+tar czvf ../mitmproxy.tgz *
+</code></pre><p><span>As a result, I got an archive containing all the necessary files. Now let’s put them in mitmproxy.</span></p><pre><code>mkdir -p ~/.mitmproxy
+tar xzf ../mitmproxy.tgz -C ~/.mitmproxy/
+</code></pre><hr><p><span>Figure 30 shows the created server certificate.</span></p><center>
+<p><img src="https://i.imgur.com/9z60rEP.png" alt="" loading="lazy"><br>
+<span>Figure 30 - Server certificate</span></p>
+</center><hr><center>
+<h3 id="mitmproxy" data-id="mitmproxy"><a class="anchor hidden-xs" href="#mitmproxy" title="mitmproxy"><span class="octicon octicon-link"></span></a><span>mitmproxy</span></h3>
+</center><hr><p><span>This time I will use the default proxy configuration. So I set up a proxy server on my workstation as shown in Figure 31.</span></p><center>
+<p><img src="https://i.imgur.com/2H6nucu.png" alt="" loading="lazy"><br>
+<span>Figure 31 - Proxy configuration</span></p>
+</center><p><span>Then I just started the proxy server using the </span><code>mitmproxy</code><span> command, there is an error (Figure 32).</span></p><center>
+<p><img src="https://i.imgur.com/ugmJo9Q.png" alt="" loading="lazy"><br>
+<span>Figure 32 - Error</span></p>
+</center><p><span>To solve this problem, I just imported my root certificate into Firefox as shown in Figure 33.</span></p><center>
+<p><img src="https://i.imgur.com/tETPnBe.png" alt="" loading="lazy"><br>
+<span>Figure 33 - Importing the root certificate in the Firefox browser</span></p>
+</center><p><span>All I have to do is reload the Facebook page (Figure 34).</span></p><center>
+<p><img src="https://i.imgur.com/glFHzSJ.png" alt="" loading="lazy"><br>
+<span>Figure 34 - Success</span></p>
+</center><p><span>Let’s see the certificate chain (Figure 35).</span></p><center>
+<p><img src="https://i.imgur.com/wmcXaia.png" alt="" loading="lazy"><br>
+<span>Figure 35 - Certificate chain</span></p>
+</center><p><span>So, the job is done. This configuration can be used to access all sites.</span></p><p><span>Let’s try to get access </span><a href="http://facebook.com" target="_blank" rel="noopener"><span>facebook.com</span></a><span> with a manually created server certificate. To do this, I executed the command </span><code>mitmproxy--cert=chain.pem</code><span> (Figure 36).</span></p><center>
+<p><img src="https://i.imgur.com/PaADyrO.png" alt="" loading="lazy"><br>
+<span>Figure 36 - Facebook page</span></p>
+</center><p><span>Figure 37 shows the certificate chain.</span></p><center>
+<p><img src="https://i.imgur.com/GLRQHLv.png" alt="" loading="lazy"><br>
+<span>Figure 37 - Certificate chain</span></p>
+</center><p><span>This certificate chain is included in the report as an appendix (</span><strong><span>files chain.pem and chain.txt</span></strong><span>).</span></p><hr><h2 id="References" data-id="References"><a class="anchor hidden-xs" href="#References" title="References"><span class="octicon octicon-link"></span></a><span>References:</span></h2><ol>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc8446" target="_blank" rel="noopener"><span>RFC 8446 The Transport Layer Security (TLS) Protocol Version 1.3</span></a></li>
+<li><a href="https://klondike.es/klog/2021/04/12/some-notes-on-cipher-choices-and-tls1-3/" target="_blank" rel="noopener"><span>Some notes on cipher choices and TLS1.3</span></a></li>
+<li><a href="https://dou.ua/forums/topic/34353/" target="_blank" rel="noopener"><span>SSL/TLS</span></a></li>
+<li><a href="https://www.feistyduck.com/library/openssl-cookbook/online/index.html" target="_blank" rel="noopener"><span>OpenSSL Cookbook by Ivan Ristić</span></a></li>
+<li><a href="https://docs.mitmproxy.org" target="_blank" rel="noopener"><span>mitmproxy docs</span></a></li>
+<li><a href="https://avinetworks.com/glossary/tls-proxy/" target="_blank" rel="noopener"><span>TLS Proxy</span></a></li>
+<li><a href="https://arxiv.org/pdf/1407.7146.pdf" target="_blank" rel="noopener"><span>TLS Proxies: Friend or Foe? by Mark O’Neill, Scott Ruoti, Kent Seamons, Daniel Zappala</span></a></li>
+<li><a href="https://www.golinuxcloud.com/openssl-create-client-server-certificate/#Create_server_private_key" target="_blank" rel="noopener"><span>Create RootCA and sign certificates</span></a></li>
+<li><a href="https://github.com/cloudflare/cfssl" target="_blank" rel="noopener"><span>CFSSL - automated generation of certificates</span></a></li>
+</ol></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#SSN-Lab-5---TLS" title="SSN Lab 5 - TLS">SSN Lab 5 - TLS</a><ul class="nav">
+<li class=""><a href="#Task-1---TLS-handshake" title="Task 1 - TLS handshake:">Task 1 - TLS handshake:</a></li>
+<li class=""><a href="#Task-2---Man-In-The-Middle" title="Task 2 - Man In The Middle">Task 2 - Man In The Middle</a></li>
+<li><a href="#Task-3---x509" title="Task 3 - x509">Task 3 - x509</a></li>
+<li class=""><a href="#References" title="References:">References:</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#SSN-Lab-5---TLS" title="SSN Lab 5 - TLS">SSN Lab 5 - TLS</a><ul class="nav">
+<li class=""><a href="#Task-1---TLS-handshake" title="Task 1 - TLS handshake:">Task 1 - TLS handshake:</a></li>
+<li class=""><a href="#Task-2---Man-In-The-Middle" title="Task 2 - Man In The Middle">Task 2 - Man In The Middle</a></li>
+<li><a href="#Task-3---x509" title="Task 3 - x509">Task 3 - x509</a></li>
+<li class=""><a href="#References" title="References:">References:</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>

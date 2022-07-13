@@ -1,0 +1,266 @@
+X.509 Certificate Information:
+	Version: 3
+	Serial Number (hex): 1c265483c063c2579b6c575db4a487cd0976e8a1
+	Issuer: CN=DigiCert SHA2 High Assurance Server CA,OU=www.digicert.com,O=DigiCert Inc,C=US
+	Validity:
+		Not Before: Mon Nov 15 07:33:29 UTC 2021
+		Not After: Tue Nov 15 07:33:29 UTC 2022
+	Subject: CN=*.facebook.com,O=Facebook\, Inc.,L=Menlo Park,ST=California,C=US
+	Subject Public Key Algorithm: EC/ECDSA
+	Algorithm Security Level: High (256 bits)
+		Curve:	SECP256R1
+		X:
+			00:c2:79:08:b6:0e:cb:fa:6f:54:fa:ff:b3:09:86:c8
+			e5:a7:6e:c7:0a:2f:1e:8a:91:29:49:eb:90:cd:92:f9
+		Y:
+			00:d8:46:9d:02:ba:5a:16:1e:26:82:cd:a4:d2:ea:9c
+			ec:80:ec:a3:0f:8d:44:d8:90:bd:ce:b3:3a:e0:3e:49
+			b6
+	Extensions:
+		Basic Constraints (not critical):
+			Certificate Authority (CA): FALSE
+		Unknown extension 2.16.840.1.113730.1.1 (not critical):
+			ASCII: ...@
+			Hexdump: 03020640
+		Subject Key Identifier (not critical):
+			0eecebd2ec4ea0acf4a9ce14d62765c8198f0846
+		Authority Key Identifier (not critical):
+			b0fbe1a1b98e7a3201de4d4cdb81eded56891d21
+		Key Usage (critical):
+			Digital signature.
+			Key encipherment.
+		Key Purpose (not critical):
+			TLS WWW Server.
+			TLS WWW Client.
+	Signature Algorithm: RSA-SHA256
+	Signature:
+		37:20:09:ac:cc:2d:fe:82:b9:02:e3:ed:15:7f:2b:26
+		c6:b9:84:97:06:a1:b5:96:51:0c:fa:84:01:f5:74:db
+		68:96:a8:1a:25:97:1b:07:89:52:1b:74:05:5b:3f:85
+		a7:73:29:9d:e6:79:ce:84:79:bb:42:76:23:54:0a:aa
+		17:fe:64:05:54:b8:a2:d1:5c:47:11:d7:50:8d:ac:92
+		dc:96:93:26:d6:33:98:bf:a8:99:c5:0c:dc:f0:b9:8d
+		b0:3a:8e:a6:6d:cb:67:39:ea:b8:f0:cd:04:d4:98:16
+		b3:fb:7b:c4:9e:4a:8f:f8:6d:3a:fd:ac:8c:cd:4c:2a
+		51:0d:6f:37:6f:d0:ed:21:0f:17:45:e3:eb:a4:40:6e
+		17:c8:c0:02:80:1e:72:b2:ba:b5:ca:e0:78:78:ed:0a
+		1f:5b:2f:ce:6b:48:7b:fc:05:8b:10:e1:52:ba:64:8e
+		a9:ba:03:f5:97:98:fa:40:aa:2f:3b:87:a0:19:5b:00
+		90:81:23:9e:9c:45:84:46:5e:4f:64:59:33:38:d0:00
+		1a:61:59:75:83:39:2b:bf:38:b4:6d:f6:32:aa:b4:f2
+		ed:39:69:a8:fc:7b:7c:ba:df:0e:e8:8c:f1:7d:6f:54
+		1b:4d:40:43:58:23:ba:e0:88:18:d2:f3:06:e0:8b:f4
+Other Information:
+	Fingerprint:
+		sha1:60b195df6a80754ccb8bb08e473236bffc8d5d8c
+		sha256:ae041b8a568333f1d6de1c6fb7a6654259d6e523ad3081a9b5c4f3140a47ec35
+	Public Key ID:
+		sha1:694bb26ab053128262fc806130019ba0f8a1963d
+		sha256:c1b4f9f5695ef82ac576733ca899d5c43f7529a557ac08acb2d5840d991358ad
+	Public Key PIN:
+		pin-sha256:wbT59Wle+CrFdnM8qJnVxD91KaVXrAisstWEDZkTWK0=
+
+-----BEGIN CERTIFICATE-----
+MIIDpzCCAo+gAwIBAgIUHCZUg8BjwlebbFddtKSHzQl26KEwDQYJKoZIhvcNAQEL
+BQAwcDELMAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UE
+CxMQd3d3LmRpZ2ljZXJ0LmNvbTEvMC0GA1UEAxMmRGlnaUNlcnQgU0hBMiBIaWdo
+IEFzc3VyYW5jZSBTZXJ2ZXIgQ0EwHhcNMjExMTE1MDczMzI5WhcNMjIxMTE1MDcz
+MzI5WjBpMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTETMBEGA1UE
+BwwKTWVubG8gUGFyazEXMBUGA1UECgwORmFjZWJvb2ssIEluYy4xFzAVBgNVBAMM
+DiouZmFjZWJvb2suY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAMJ5CLYO
+y/pvVPr/swmGyOWnbscKLx6KkSlJ65DNkvnYRp0CuloWHiaCzaTS6pzsgOyjD41E
+2JC9zrM64D5JtqOCAQkwggEFMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgZA
+MB0GA1UdDgQWBBQO7OvS7E6grPSpzhTWJ2XIGY8IRjCBlgYDVR0jBIGOMIGLgBSw
+++GhuY56MgHeTUzbge3tVokdIaFwpG4wbDELMAkGA1UEBhMCVVMxFTATBgNVBAoT
+DERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3LmRpZ2ljZXJ0LmNvbTErMCkGA1UE
+AxMiRGlnaUNlcnQgSGlnaCBBc3N1cmFuY2UgRVYgUm9vdCBDQYIBATAOBgNVHQ8B
+Af8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA0GCSqGSIb3
+DQEBCwUAA4IBAQA3IAmszC3+grkC4+0VfysmxrmElwahtZZRDPqEAfV022iWqBol
+lxsHiVIbdAVbP4Wncymd5nnOhHm7QnYjVAqqF/5kBVS4otFcRxHXUI2sktyWkybW
+M5i/qJnFDNzwuY2wOo6mbctnOeq48M0E1JgWs/t7xJ5Kj/htOv2sjM1MKlENbzdv
+0O0hDxdF4+ukQG4XyMACgB5ysrq1yuB4eO0KH1svzmtIe/wFixDhUrpkjqm6A/WX
+mPpAqi87h6AZWwCQgSOenEWERl5PZFkzONAAGmFZdYM5K784tG32Mqq08u05aaj8
+e3y63w7ojPF9b1QbTUBDWCO64IgY0vMG4Iv0
+-----END CERTIFICATE-----
+
+X.509 Certificate Information:
+	Version: 3
+	Serial Number (hex): 01
+	Issuer: CN=DigiCert High Assurance EV Root CA,OU=www.digicert.com,O=DigiCert Inc,C=US
+	Validity:
+		Not Before: Mon Nov 15 07:25:34 UTC 2021
+		Not After: Sun Nov 14 07:25:34 UTC 2027
+	Subject: CN=DigiCert SHA2 High Assurance Server CA,OU=www.digicert.com,O=DigiCert Inc,C=US
+	Subject Public Key Algorithm: RSA
+	Algorithm Security Level: Medium (2048 bits)
+		Modulus (bits 2048):
+			00:d3:30:7c:10:f2:c2:e1:d8:ae:6d:44:53:42:21:f5
+			a7:7b:7f:c5:be:aa:73:05:6e:a5:a0:b3:c3:5d:71:9f
+			42:11:2b:d2:98:7d:34:4c:90:2b:4c:df:ec:fb:b0:39
+			fb:b6:81:19:c4:ad:00:89:4c:56:7f:88:49:46:1d:1f
+			63:39:76:fb:16:29:7e:74:5a:8a:95:4b:e9:b1:36:c9
+			bf:fd:aa:29:86:dd:e5:89:64:7c:a9:8b:2d:07:72:6a
+			e5:c1:00:01:65:a4:8e:11:2a:a2:a1:eb:99:db:f4:0a
+			57:cc:20:32:b5:d6:37:81:b7:b3:f4:64:56:f2:4e:63
+			3e:b1:b8:a0:31:f8:c0:d7:00:27:a6:31:06:83:51:8b
+			fb:98:6c:bc:dc:06:7c:2f:a9:23:e7:91:94:7c:6c:1b
+			b6:a7:11:0a:ed:7e:1f:00:b3:12:52:38:ad:f3:fe:78
+			e4:b5:d6:03:6c:b9:64:5c:74:c1:52:b4:1d:ec:31:f9
+			92:21:68:37:c1:81:8b:b6:c7:0c:c7:f0:7e:aa:ad:d6
+			3f:86:a5:e0:b9:a6:43:92:eb:f8:5e:ac:3a:20:19:8f
+			86:c7:3b:cf:dd:ce:82:4c:9c:42:91:14:22:01:f1:5d
+			99:58:0b:28:8a:63:2f:51:f1:4a:2c:33:d1:e0:22:a4
+			53
+		Exponent (bits 24):
+			01:00:01
+	Extensions:
+		Subject Key Identifier (not critical):
+			b0fbe1a1b98e7a3201de4d4cdb81eded56891d21
+		Authority Key Identifier (not critical):
+			06cd39d03f755c1cad8e48ef945121e4336391bf
+		Basic Constraints (critical):
+			Certificate Authority (CA): TRUE
+			Path Length Constraint: 1
+		Key Usage (critical):
+			Digital signature.
+			Certificate signing.
+			CRL signing.
+	Signature Algorithm: RSA-SHA256
+	Signature:
+		77:0a:24:ef:01:3e:38:14:0e:b2:3a:ac:37:49:b6:b2
+		34:94:c6:f5:82:06:9a:ee:00:8c:55:5b:39:af:97:42
+		3c:87:c4:3a:36:33:a1:99:22:28:e5:cc:13:9d:67:28
+		73:56:48:7c:c6:63:65:14:c8:b6:89:78:2f:2b:f7:f9
+		aa:d3:16:6f:3c:58:44:e5:78:d3:52:ae:d6:87:22:f8
+		bd:53:98:81:40:46:ba:b4:57:d2:af:2c:0f:e3:29:e4
+		6b:8e:50:9a:4b:36:c6:a0:f9:86:d2:45:15:21:48:b0
+		20:b2:37:51:3e:b0:62:5d:22:23:6b:05:ce:c5:e7:0a
+		f2:97:87:ee:60:01:81:d1:0a:9c:28:39:f2:99:a9:59
+		3c:2f:1d:01:9c:fd:2e:ac:2a:a0:bb:cc:f0:2a:4c:8f
+		d0:e5:48:03:84:15:11:52:13:f6:38:b6:31:41:2b:9f
+		81:a2:91:40:38:f0:68:47:49:3d:92:d0:19:90:ca:cb
+		33:ad:e9:fa:e4:95:6d:8b:0b:c4:dc:12:9b:75:6b:71
+		2b:a4:f9:f7:98:04:a1:b3:35:71:04:2d:7d:9b:d3:7e
+		95:07:04:50:d5:6d:8c:ba:cf:92:f1:26:93:e7:7a:fb
+		47:97:21:07:69:3d:66:80:cd:b3:e4:b1:f1:80:01:00
+Other Information:
+	Fingerprint:
+		sha1:38c98dae3b817b08b8d7904d6d951c481e967f3c
+		sha256:6f750a2c084011418e7d469297a9d779298b7b452ebc948d4c655454a7c7d8e6
+	Public Key ID:
+		sha1:e7cff4c1b8da94f5191fbd032e6cf986a9ad73ba
+		sha256:792e9c1cccd2a080c6829e718b969baa0fc19f4d5bf30808af6618413fbc16e0
+	Public Key PIN:
+		pin-sha256:eS6cHMzSoIDGgp5xi5abqg/Bn01b8wgIr2YYQT+8FuA=
+
+-----BEGIN CERTIFICATE-----
+MIIDvTCCAqWgAwIBAgIBATANBgkqhkiG9w0BAQsFADBsMQswCQYDVQQGEwJVUzEV
+MBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29t
+MSswKQYDVQQDEyJEaWdpQ2VydCBIaWdoIEFzc3VyYW5jZSBFViBSb290IENBMB4X
+DTIxMTExNTA3MjUzNFoXDTI3MTExNDA3MjUzNFowcDELMAkGA1UEBhMCVVMxFTAT
+BgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3LmRpZ2ljZXJ0LmNvbTEv
+MC0GA1UEAxMmRGlnaUNlcnQgU0hBMiBIaWdoIEFzc3VyYW5jZSBTZXJ2ZXIgQ0Ew
+ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDTMHwQ8sLh2K5tRFNCIfWn
+e3/FvqpzBW6loLPDXXGfQhEr0ph9NEyQK0zf7PuwOfu2gRnErQCJTFZ/iElGHR9j
+OXb7Fil+dFqKlUvpsTbJv/2qKYbd5YlkfKmLLQdyauXBAAFlpI4RKqKh65nb9ApX
+zCAytdY3gbez9GRW8k5jPrG4oDH4wNcAJ6YxBoNRi/uYbLzcBnwvqSPnkZR8bBu2
+pxEK7X4fALMSUjit8/545LXWA2y5ZFx0wVK0Hewx+ZIhaDfBgYu2xwzH8H6qrdY/
+hqXguaZDkuv4Xqw6IBmPhsc7z93OgkycQpEUIgHxXZlYCyiKYy9R8UosM9HgIqRT
+AgMBAAGjZjBkMB0GA1UdDgQWBBSw++GhuY56MgHeTUzbge3tVokdITAfBgNVHSME
+GDAWgBQGzTnQP3VcHK2OSO+UUSHkM2ORvzASBgNVHRMBAf8ECDAGAQH/AgEBMA4G
+A1UdDwEB/wQEAwIBhjANBgkqhkiG9w0BAQsFAAOCAQEAdwok7wE+OBQOsjqsN0m2
+sjSUxvWCBpruAIxVWzmvl0I8h8Q6NjOhmSIo5cwTnWcoc1ZIfMZjZRTItol4Lyv3
++arTFm88WETleNNSrtaHIvi9U5iBQEa6tFfSrywP4ynka45Qmks2xqD5htJFFSFI
+sCCyN1E+sGJdIiNrBc7F5wryl4fuYAGB0QqcKDnymalZPC8dAZz9LqwqoLvM8CpM
+j9DlSAOEFRFSE/Y4tjFBK5+BopFAOPBoR0k9ktAZkMrLM63p+uSVbYsLxNwSm3Vr
+cSuk+feYBKGzNXEELX2b036VBwRQ1W2Mus+S8SaT53r7R5chB2k9ZoDNs+Sx8YAB
+AA==
+-----END CERTIFICATE-----
+
+X.509 Certificate Information:
+	Version: 3
+	Serial Number (hex): 1f45342962f2dd5dbe40ab3bd52c7d80a7cd09e1
+	Issuer: CN=DigiCert High Assurance EV Root CA,OU=www.digicert.com,O=DigiCert Inc,C=US
+	Validity:
+		Not Before: Mon Nov 15 06:30:54 UTC 2021
+		Not After: Sat Nov 12 06:30:54 UTC 2033
+	Subject: CN=DigiCert High Assurance EV Root CA,OU=www.digicert.com,O=DigiCert Inc,C=US
+	Subject Public Key Algorithm: RSA
+	Algorithm Security Level: Medium (2048 bits)
+		Modulus (bits 2048):
+			00:b7:ed:9e:cc:03:36:81:c2:07:50:3f:46:67:f0:7d
+			70:f4:28:b7:a1:ed:b5:c4:58:17:c5:95:8d:20:bf:73
+			ab:1b:20:71:6c:d5:38:c3:60:72:32:fd:4d:1b:f5:d3
+			b0:da:43:f9:a3:16:05:91:92:4c:e6:66:b1:c7:db:fb
+			f3:45:c1:6c:3c:8d:1c:52:50:93:5f:48:3c:92:32:ca
+			ea:cf:cc:fe:71:94:92:fc:74:88:91:79:c8:1d:74:5b
+			9e:0d:86:2f:15:1e:0f:7e:12:90:eb:96:2d:54:aa:ff
+			2e:30:7b:07:ed:07:d6:77:9e:d6:5b:8f:6a:57:cf:b6
+			20:5c:95:af:06:50:62:1f:65:9d:e5:f2:d7:2c:c0:8d
+			f5:39:87:2b:1e:9d:a8:7c:08:d8:e0:b7:ae:cf:de:2f
+			0c:fb:c3:d9:ea:53:4c:19:22:8c:f4:a6:b8:4b:66:5b
+			1b:32:32:40:e9:97:99:73:b5:a1:d8:d6:47:7b:90:8c
+			8b:69:ca:a9:84:01:ae:f8:32:3e:51:34:a7:33:fa:bb
+			dd:c0:1f:0d:a3:d7:2b:a7:89:26:bb:0e:71:3e:6d:3c
+			c0:fd:fc:2f:d6:2c:49:66:bd:9f:7d:d0:b6:bd:fe:01
+			4c:24:fc:f1:9c:c5:fb:39:e7:5c:fe:21:88:02:eb:a3
+			01
+		Exponent (bits 24):
+			01:00:01
+	Extensions:
+		Subject Key Identifier (not critical):
+			06cd39d03f755c1cad8e48ef945121e4336391bf
+		Authority Key Identifier (not critical):
+			06cd39d03f755c1cad8e48ef945121e4336391bf
+		Basic Constraints (critical):
+			Certificate Authority (CA): TRUE
+	Signature Algorithm: RSA-SHA256
+	Signature:
+		b6:87:29:bf:3f:49:72:0e:13:97:d4:f1:98:82:af:06
+		52:6c:9d:5a:e7:2c:a2:f1:14:15:40:7a:e1:ac:9e:ef
+		25:e7:51:c1:fa:af:a4:cc:53:fd:dd:6a:94:ec:12:64
+		98:ac:e4:97:63:17:4e:16:18:f2:05:c2:4e:39:db:82
+		0a:71:67:57:6b:a4:8c:8a:17:af:4f:be:94:db:ff:75
+		70:0e:4e:ec:54:65:c8:df:7b:97:e5:10:af:fc:7e:25
+		8d:79:3b:38:6a:2e:bd:58:f4:73:d0:d5:86:0e:94:07
+		e9:a3:8f:ac:e8:3b:52:04:02:ac:aa:11:e7:a9:89:ec
+		5c:67:ba:7e:8d:5d:a6:b8:5f:77:67:8d:b8:c6:b7:6d
+		1a:59:2b:b4:35:0d:2c:fe:9a:cb:3c:88:e2:55:b2:cf
+		69:83:e8:04:8b:8c:3e:79:ce:e0:61:a5:1b:68:c3:40
+		74:67:cc:8a:72:95:82:2b:a0:b6:fd:60:5e:b9:ae:b8
+		a0:d4:ff:44:bc:85:53:4e:0e:39:9c:eb:28:dc:63:73
+		7b:43:f8:97:4f:b9:f4:90:08:b5:0f:52:3f:0a:f9:b2
+		29:2e:6f:af:4a:90:f5:95:d2:5c:c5:ed:89:58:36:e9
+		3c:29:8f:cc:9f:54:52:b2:4c:19:b1:21:56:52:b9:78
+Other Information:
+	Fingerprint:
+		sha1:efca6f120300fc534ae1130f25522eafc1fbe299
+		sha256:a65b012efd970ea6f7d5c643f36a70311b6d04adea7eab223631083ac7ebf7e0
+	Public Key ID:
+		sha1:b113fd4e1a5d2dd04eb24611320d76047e68ee1a
+		sha256:56aba0974c2455ca0041ad9d7f7b3974a5cc4fcd58fdd3f5efc7f28efb04d5e7
+	Public Key PIN:
+		pin-sha256:Vqugl0wkVcoAQa2df3s5dKXMT81Y/dP178fyjvsE1ec=
+
+-----BEGIN CERTIFICATE-----
+MIIDuTCCAqGgAwIBAgIUH0U0KWLy3V2+QKs71Sx9gKfNCeEwDQYJKoZIhvcNAQEL
+BQAwbDELMAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UE
+CxMQd3d3LmRpZ2ljZXJ0LmNvbTErMCkGA1UEAxMiRGlnaUNlcnQgSGlnaCBBc3N1
+cmFuY2UgRVYgUm9vdCBDQTAeFw0yMTExMTUwNjMwNTRaFw0zMzExMTIwNjMwNTRa
+MGwxCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsT
+EHd3dy5kaWdpY2VydC5jb20xKzApBgNVBAMTIkRpZ2lDZXJ0IEhpZ2ggQXNzdXJh
+bmNlIEVWIFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+7Z7MAzaBwgdQP0Zn8H1w9Ci3oe21xFgXxZWNIL9zqxsgcWzVOMNgcjL9TRv107Da
+Q/mjFgWRkkzmZrHH2/vzRcFsPI0cUlCTX0g8kjLK6s/M/nGUkvx0iJF5yB10W54N
+hi8VHg9+EpDrli1Uqv8uMHsH7QfWd57WW49qV8+2IFyVrwZQYh9lneXy1yzAjfU5
+hysenah8CNjgt67P3i8M+8PZ6lNMGSKM9Ka4S2ZbGzIyQOmXmXO1odjWR3uQjItp
+yqmEAa74Mj5RNKcz+rvdwB8No9crp4kmuw5xPm08wP38L9YsSWa9n33Qtr3+AUwk
+/PGcxfs551z+IYgC66MBAgMBAAGjUzBRMB0GA1UdDgQWBBQGzTnQP3VcHK2OSO+U
+USHkM2ORvzAfBgNVHSMEGDAWgBQGzTnQP3VcHK2OSO+UUSHkM2ORvzAPBgNVHRMB
+Af8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQC2hym/P0lyDhOX1PGYgq8GUmyd
+WucsovEUFUB64aye7yXnUcH6r6TMU/3dapTsEmSYrOSXYxdOFhjyBcJOOduCCnFn
+V2ukjIoXr0++lNv/dXAOTuxUZcjfe5flEK/8fiWNeTs4ai69WPRz0NWGDpQH6aOP
+rOg7UgQCrKoR56mJ7Fxnun6NXaa4X3dnjbjGt20aWSu0NQ0s/prLPIjiVbLPaYPo
+BIuMPnnO4GGlG2jDQHRnzIpylYIroLb9YF65rrig1P9EvIVTTg45nOso3GNze0P4
+l0+59JAItQ9SPwr5sikub69KkPWV0lzF7YlYNuk8KY/Mn1RSskwZsSFWUrl4
+-----END CERTIFICATE-----

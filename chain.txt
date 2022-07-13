@@ -1,0 +1,417 @@
+X.509 Certificate Information:
+	Version: 3
+	Serial Number (hex): 6dbfcf32aa186cb345f7e97578b21eb14c136bed
+	Issuer: EMAIL=v.shelkovnikov@innopolis.university,CN=Vladimir st12,O=Innopolis University,ST=Tatarstan,C=RU
+	Validity:
+		Not Before: Fri Nov 12 20:34:49 UTC 2021
+		Not After: Sat Nov 12 20:34:49 UTC 2022
+	Subject: CN=*.facebook.com,OU=*.facebook.com,O=Facebook\, Inc.,L=Menlo Park,ST=California,C=US
+	Subject Public Key Algorithm: RSA
+	Algorithm Security Level: High (4096 bits)
+		Modulus (bits 4096):
+			00:bb:42:d5:6a:4a:3f:ee:7d:7a:07:9e:88:b4:41:4c
+			d7:a0:6d:68:48:d0:d6:ad:f2:bb:53:97:eb:19:de:6f
+			04:c6:a6:2e:1a:18:fe:4d:79:05:f3:cd:98:9f:cc:a9
+			14:c2:8d:9d:d6:7f:cf:38:52:03:10:0b:96:63:95:36
+			52:3b:f0:a1:d6:ee:39:3d:18:ba:4d:66:ba:e4:22:d2
+			6f:e4:09:6a:16:b6:7b:b4:b1:7a:ef:c2:05:ca:fe:42
+			55:6f:e7:63:38:0c:c9:73:26:4a:4e:30:b5:8d:a5:77
+			49:dd:d9:f9:69:2f:4a:5b:2d:bb:e8:66:2d:7e:e6:77
+			cf:6e:00:47:e4:cd:4e:08:c1:c2:7c:72:2a:a3:31:d4
+			1f:08:35:99:14:96:8f:10:da:3b:b1:56:4a:8e:a8:d1
+			f3:d3:43:bb:05:7a:3b:4f:b2:3b:be:56:05:3b:48:4c
+			23:19:ff:9e:4c:16:71:42:6e:7f:ed:b0:56:46:1c:b0
+			bf:4a:d0:5d:c3:b6:a8:84:2e:af:dd:36:66:02:6a:e7
+			2f:70:93:7e:eb:a7:26:3f:82:28:9d:70:53:b4:ab:63
+			32:4b:10:1c:d9:a6:48:25:70:a5:6d:84:b4:bc:50:13
+			2b:63:a0:35:f4:30:d0:1d:82:ef:8f:b7:59:bf:04:1b
+			72:34:20:91:a2:4c:a4:5e:75:55:9a:b0:81:3f:1c:57
+			4b:33:f1:8c:30:cf:e0:e0:6e:89:45:a3:49:ba:75:49
+			fb:ed:fd:43:c6:35:46:43:a3:0c:05:0d:4f:f4:e5:7b
+			4b:65:92:96:29:fc:11:5e:86:82:b0:33:a0:33:e1:a9
+			90:cf:6b:4b:7a:fb:e7:8d:64:07:d7:58:78:28:5d:a0
+			d3:90:85:46:44:79:f6:f8:6a:40:c4:ab:0a:28:13:4a
+			da:e9:b5:a1:36:44:d7:e1:f5:d1:53:5a:50:b9:59:a6
+			56:fb:d9:bd:44:33:48:61:db:ef:f5:6d:04:ad:87:7e
+			b1:76:fc:f0:32:fb:ca:c8:57:31:7f:94:0e:90:01:35
+			1d:1f:42:de:86:f0:04:21:2a:c1:d0:dd:45:9e:3a:4e
+			c3:e2:e3:ef:a8:93:f1:f1:8c:a6:3a:20:d1:17:57:0b
+			f9:ee:6e:d4:7c:94:45:68:2d:c4:4b:c6:05:e4:b0:a8
+			ad:92:4d:88:62:21:53:a6:01:08:a9:a5:da:fd:53:98
+			e2:37:ac:47:eb:89:c6:11:7b:5b:7e:db:18:c1:65:b3
+			3a:f6:7e:db:b5:e6:0b:26:d2:ad:ce:de:4d:e1:ca:66
+			23:e8:3b:34:c6:e6:96:bd:7d:8d:63:1b:d8:4b:45:d6
+			bd
+		Exponent (bits 24):
+			01:00:01
+	Extensions:
+		Basic Constraints (not critical):
+			Certificate Authority (CA): FALSE
+		Unknown extension 2.16.840.1.113730.1.1 (not critical):
+			ASCII: ...@
+			Hexdump: 03020640
+		Subject Key Identifier (not critical):
+			07d0117be28bb4627cd8db07e74cb8422f3836f8
+		Authority Key Identifier (not critical):
+			893b875daa08af93ff3eaa0af9f40e8005b715e7
+		Key Usage (critical):
+			Digital signature.
+			Key encipherment.
+		Key Purpose (not critical):
+			TLS WWW Server.
+			TLS WWW Client.
+	Signature Algorithm: RSA-SHA256
+	Signature:
+		a0:0e:80:b9:4f:ff:1e:c7:f9:3d:1a:12:5e:44:36:9d
+		2c:d6:3a:f6:49:dc:24:6e:eb:01:51:83:0a:6e:d6:b8
+		02:e9:f0:c0:3a:e6:8d:7a:1c:14:96:af:52:49:a1:42
+		36:bf:36:45:ec:1b:dd:17:db:b7:91:41:83:9a:d3:2d
+		09:43:42:6c:77:97:4b:95:93:3a:65:69:4e:0d:1b:fb
+		5c:1e:2d:d6:71:dd:e2:d3:86:29:1a:dc:3e:96:58:0b
+		58:75:c9:24:e6:a7:d4:d6:42:d1:65:f1:99:7c:e6:d9
+		45:7c:b7:c0:11:7f:97:89:d9:78:33:7f:e2:73:f6:8c
+		1e:3e:ab:c9:5e:c9:2d:11:62:60:71:89:95:58:4e:40
+		f2:b8:71:c9:13:6a:5d:72:a3:75:7f:5b:d0:fb:42:d4
+		8e:1d:24:20:75:02:78:e5:7b:6d:8d:b6:2d:33:ce:d2
+		18:d6:80:39:8a:96:87:54:18:e9:b4:d6:d3:15:11:13
+		94:98:fd:fb:40:e5:55:88:db:62:0a:2d:d9:53:d3:dc
+		dd:d3:37:c5:50:38:9d:55:ba:7e:a0:92:20:90:3f:de
+		69:f3:b6:94:bd:ea:52:98:51:3e:5d:bc:8a:01:3a:36
+		a5:58:bb:d6:2f:a6:a1:1f:4d:a4:af:7f:0b:77:cc:f3
+		f6:b9:cc:a3:f0:a9:44:8a:c6:60:41:30:9a:0e:bf:db
+		de:65:83:68:62:98:58:6f:5d:ce:0b:48:c1:7e:19:3d
+		26:1d:4c:37:cb:5a:91:52:32:58:0d:f9:b1:3a:88:ba
+		fb:49:f1:67:07:3d:0e:50:43:f8:3c:03:46:75:89:dc
+		5a:6b:a6:d7:da:c1:70:0e:d9:82:3e:43:da:59:aa:6f
+		84:10:d7:a0:cf:f0:5a:8a:23:12:5d:a8:8e:68:87:93
+		37:33:06:32:70:90:6b:c4:09:a8:df:0a:81:15:5c:b2
+		84:8c:bd:76:9a:46:60:c3:89:e8:33:c6:5a:3b:5c:18
+		df:bf:ca:32:ba:e4:2e:8c:ce:d6:17:6f:be:52:d3:00
+		5c:19:03:ef:a8:84:27:1e:fa:03:33:a2:8f:37:da:66
+		72:9a:b8:ee:79:ca:69:0e:f1:9d:36:cb:a3:b9:b6:48
+		02:fd:88:4b:5b:5c:d8:dc:cd:cb:26:d3:e3:f6:6d:e0
+		2c:ce:d2:c2:4e:01:fd:9f:3d:b7:73:a1:34:56:a2:79
+		18:17:81:35:a9:2d:75:5b:9d:d9:2d:4e:8d:7a:16:16
+		05:3f:6f:be:b5:3b:d3:1a:d2:09:c3:bf:4b:44:97:5a
+		85:17:7f:05:e8:85:ff:1d:8b:4c:5c:15:fa:90:e1:5d
+Other Information:
+	Fingerprint:
+		sha1:5ac365612dc24ff5235daf0ceabe6d39d3690c2a
+		sha256:ae839056061626b8ab1882abd5475f2e2cea00043ab43ce319cc1810d5cbb584
+	Public Key ID:
+		sha1:cc440bda86a2695e480db97159d361826a9134d7
+		sha256:2c466eb008ec0f504af30705dcf42485072a71ea42933e6a44ba472f1a1bfba3
+	Public Key PIN:
+		pin-sha256:LEZusAjsD1BK8wcF3PQkhQcqcepCkz5qRLpHLxob+6M=
+
+-----BEGIN CERTIFICATE-----
+MIIG6DCCBNCgAwIBAgIUbb/PMqoYbLNF9+l1eLIesUwTa+0wDQYJKoZIhvcNAQEL
+BQAwgYwxCzAJBgNVBAYTAlJVMRIwEAYDVQQIEwlUYXRhcnN0YW4xHTAbBgNVBAoT
+FElubm9wb2xpcyBVbml2ZXJzaXR5MRYwFAYDVQQDEw1WbGFkaW1pciBzdDEyMTIw
+MAYJKoZIhvcNAQkBFiN2LnNoZWxrb3ZuaWtvdkBpbm5vcG9saXMudW5pdmVyc2l0
+eTAeFw0yMTExMTIyMDM0NDlaFw0yMjExMTIyMDM0NDlaMIGCMQswCQYDVQQGEwJV
+UzETMBEGA1UECAwKQ2FsaWZvcm5pYTETMBEGA1UEBwwKTWVubG8gUGFyazEXMBUG
+A1UECgwORmFjZWJvb2ssIEluYy4xFzAVBgNVBAsMDiouZmFjZWJvb2suY29tMRcw
+FQYDVQQDDA4qLmZhY2Vib29rLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBALtC1WpKP+59egeeiLRBTNegbWhI0Nat8rtTl+sZ3m8ExqYuGhj+TXkF
+882Yn8ypFMKNndZ/zzhSAxALlmOVNlI78KHW7jk9GLpNZrrkItJv5AlqFrZ7tLF6
+78IFyv5CVW/nYzgMyXMmSk4wtY2ld0nd2flpL0pbLbvoZi1+5nfPbgBH5M1OCMHC
+fHIqozHUHwg1mRSWjxDaO7FWSo6o0fPTQ7sFejtPsju+VgU7SEwjGf+eTBZxQm5/
+7bBWRhywv0rQXcO2qIQur902ZgJq5y9wk37rpyY/giidcFO0q2MySxAc2aZIJXCl
+bYS0vFATK2OgNfQw0B2C74+3Wb8EG3I0IJGiTKRedVWasIE/HFdLM/GMMM/g4G6J
+RaNJunVJ++39Q8Y1RkOjDAUNT/Tle0tlkpYp/BFehoKwM6Az4amQz2tLevvnjWQH
+11h4KF2g05CFRkR59vhqQMSrCigTStrptaE2RNfh9dFTWlC5WaZW+9m9RDNIYdvv
+9W0ErYd+sXb88DL7yshXMX+UDpABNR0fQt6G8AQhKsHQ3UWeOk7D4uPvqJPx8Yym
+OiDRF1cL+e5u1HyURWgtxEvGBeSwqK2STYhiIVOmAQippdr9U5jiN6xH64nGEXtb
+ftsYwWWzOvZ+27XmCybSrc7eTeHKZiPoOzTG5pa9fY1jG9hLRda9AgMBAAGjggFI
+MIIBRDAJBgNVHRMEAjAAMBEGCWCGSAGG+EIBAQQEAwIGQDAdBgNVHQ4EFgQUB9AR
+e+KLtGJ82NsH50y4Qi84NvgwgdUGA1UdIwSBzTCByoAUiTuHXaoIr5P/PqoK+fQO
+gAW3Feehga6kgaswgagxCzAJBgNVBAYTAlJVMRIwEAYDVQQIEwlUYXRhcnN0YW4x
+EjAQBgNVBAcTCUlubm9wb2xpczEdMBsGA1UEChMUSW5ub3BvbGlzIFVuaXZlcnNp
+dHkxHjAcBgNVBAMTFVNoZWxrb3ZuaWtvdiBWbGFkaW1pcjEyMDAGCSqGSIb3DQEJ
+ARYjdi5zaGVsa292bmlrb3ZAaW5ub3BvbGlzLnVuaXZlcnNpdHmCAQEwDgYDVR0P
+AQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjANBgkqhkiG
+9w0BAQsFAAOCAgEAoA6AuU//Hsf5PRoSXkQ2nSzWOvZJ3CRu6wFRgwpu1rgC6fDA
+OuaNehwUlq9SSaFCNr82Rewb3Rfbt5FBg5rTLQlDQmx3l0uVkzplaU4NG/tcHi3W
+cd3i04YpGtw+llgLWHXJJOan1NZC0WXxmXzm2UV8t8ARf5eJ2Xgzf+Jz9owePqvJ
+XsktEWJgcYmVWE5A8rhxyRNqXXKjdX9b0PtC1I4dJCB1Anjle22Nti0zztIY1oA5
+ipaHVBjptNbTFRETlJj9+0DlVYjbYgot2VPT3N3TN8VQOJ1Vun6gkiCQP95p87aU
+vepSmFE+XbyKATo2pVi71i+moR9NpK9/C3fM8/a5zKPwqUSKxmBBMJoOv9veZYNo
+YphYb13OC0jBfhk9Jh1MN8takVIyWA35sTqIuvtJ8WcHPQ5QQ/g8A0Z1idxaa6bX
+2sFwDtmCPkPaWapvhBDXoM/wWoojEl2ojmiHkzczBjJwkGvECajfCoEVXLKEjL12
+mkZgw4noM8ZaO1wY37/KMrrkLozO1hdvvlLTAFwZA++ohCce+gMzoo832mZymrju
+ecppDvGdNsujubZIAv2IS1tc2NzNyybT4/Zt4CzO0sJOAf2fPbdzoTRWonkYF4E1
+qS11W53ZLU6NehYWBT9vvrU70xrSCcO/S0SXWoUXfwXohf8di0xcFfqQ4V0=
+-----END CERTIFICATE-----
+
+X.509 Certificate Information:
+	Version: 3
+	Serial Number (hex): 01
+	Issuer: EMAIL=v.shelkovnikov@innopolis.university,CN=Shelkovnikov Vladimir,O=Innopolis University,L=Innopolis,ST=Tatarstan,C=RU
+	Validity:
+		Not Before: Thu Nov 11 12:21:06 UTC 2021
+		Not After: Wed Nov 10 12:21:06 UTC 2027
+	Subject: EMAIL=v.shelkovnikov@innopolis.university,CN=Vladimir st12,O=Innopolis University,ST=Tatarstan,C=RU
+	Subject Public Key Algorithm: RSA
+	Algorithm Security Level: High (4096 bits)
+		Modulus (bits 4096):
+			00:df:8f:4e:5e:c8:99:d7:c1:0e:18:4f:79:53:f2:5a
+			be:ef:e1:eb:e1:46:36:a8:fc:ed:9b:a3:9f:5a:a0:cd
+			0c:a5:ac:2c:40:46:c3:fe:3b:44:3f:cf:6f:36:a7:5a
+			1b:18:b5:69:68:cd:5c:bf:a8:35:f1:60:4f:3d:40:9d
+			fe:10:b0:e9:19:82:03:5e:d2:2f:be:5e:8e:22:d1:50
+			06:25:9b:a7:cc:dc:7b:65:fc:5f:44:8e:b7:a1:30:89
+			1c:c1:3f:39:27:c3:fb:dc:e7:a2:30:43:c8:33:35:c4
+			ca:9b:cd:2d:92:4f:69:a4:0b:06:b2:b6:da:44:33:3d
+			7f:e0:00:3f:14:ff:77:29:27:65:04:40:78:0a:92:c1
+			28:48:0f:87:00:62:32:51:cb:57:89:76:f6:d5:3a:c9
+			a3:d2:c7:16:38:bc:15:3c:bd:32:fa:63:ea:5d:e5:8f
+			1a:ae:54:52:50:38:24:fd:5c:96:3f:d4:52:47:a4:50
+			bf:e0:43:c4:8c:f1:0a:fb:16:48:8e:f5:dd:48:b8:f4
+			5d:bb:0e:dc:86:5a:90:53:fb:75:fd:d3:77:84:51:c9
+			05:cd:94:37:bb:63:73:9a:f0:37:4f:d9:70:a0:e1:72
+			35:a3:c8:5e:c5:88:79:c3:e3:7a:23:cb:0f:a5:de:ea
+			5f:f1:c3:48:2c:00:32:3b:01:5f:79:62:cd:1e:1c:dd
+			e1:f2:d1:c2:d6:e2:c7:1f:9f:b7:46:cc:49:28:d5:22
+			c2:df:50:9d:3f:45:1e:a0:d9:89:ab:b8:fb:35:de:5f
+			10:f8:ce:e7:1a:3c:b3:ce:f1:cf:9b:fd:a7:2b:75:be
+			df:e0:00:67:59:80:d4:d0:1e:c5:e9:fc:1c:80:eb:30
+			23:7d:69:12:88:74:7a:ec:ed:1b:27:6d:6e:88:ff:c3
+			11:83:be:df:e2:d3:5c:5a:8e:b6:10:72:29:74:f0:d8
+			ce:fe:97:72:87:eb:40:ea:78:ac:bc:5c:96:30:f5:46
+			62:7f:0f:c3:91:fb:0a:ff:7e:d7:ae:db:02:13:67:67
+			cf:92:91:09:f6:24:65:4b:a8:61:5a:12:da:36:a6:5d
+			ca:9b:c3:8f:22:54:b0:f8:a0:f7:d1:37:8b:17:6d:68
+			ca:fa:f3:5a:28:5c:ff:36:09:94:57:e4:3e:8e:ca:50
+			fd:a8:23:e1:29:28:f1:ed:98:cb:01:1a:c4:7d:2b:85
+			67:27:be:c5:0e:a3:c7:ca:bc:ed:db:ee:ba:5a:2d:44
+			cf:97:60:da:bc:87:70:cd:1e:90:a1:98:dd:ab:f3:1d
+			b2:64:a9:86:07:36:7c:49:b1:0c:15:de:87:38:0b:6c
+			4b
+		Exponent (bits 24):
+			01:00:01
+	Extensions:
+		Subject Key Identifier (not critical):
+			893b875daa08af93ff3eaa0af9f40e8005b715e7
+		Authority Key Identifier (not critical):
+			c8e31792be5deb043ff3441334fd6ea23f1580da
+		Basic Constraints (critical):
+			Certificate Authority (CA): TRUE
+			Path Length Constraint: 1
+		Key Usage (critical):
+			Digital signature.
+			Certificate signing.
+			CRL signing.
+	Signature Algorithm: RSA-SHA256
+	Signature:
+		28:03:41:f9:07:45:3a:7f:22:78:7f:6d:02:15:c8:a5
+		67:12:0a:bf:8f:4f:d4:aa:3c:ca:ea:84:52:ee:69:d0
+		5d:35:f5:8a:31:9b:bb:c7:44:73:2b:f4:b0:11:dd:cd
+		99:e4:55:b6:c1:8c:5b:da:40:6a:61:29:72:8e:20:f0
+		61:33:80:0b:07:1d:82:1d:dc:32:e7:75:3c:b8:b8:c5
+		b6:1f:99:a8:4b:74:db:59:56:9d:54:f9:0b:c3:55:fb
+		2d:c2:df:c4:9b:e8:a8:06:c8:32:83:5c:ff:b6:08:04
+		e6:2b:fa:47:84:c7:c3:89:dc:42:69:25:88:7d:d2:08
+		db:78:94:17:a1:54:f9:dd:02:08:ac:21:8d:3a:97:a0
+		f9:ba:00:df:72:e9:c3:59:f8:09:01:fc:00:93:b2:ac
+		34:a5:d3:f1:db:3e:6e:0b:61:2f:4c:9b:95:01:ee:ac
+		60:25:21:92:b5:8a:4c:6c:23:de:e9:e8:9f:8b:eb:29
+		a2:08:93:01:e3:f3:1c:b2:d3:c6:b8:2e:7d:23:41:bd
+		96:a7:dc:f1:f2:80:69:ae:23:bb:e8:60:e7:92:95:8c
+		6f:b0:6e:83:65:d3:d9:39:54:f1:6e:f2:4e:3d:41:9c
+		7e:58:a5:fd:07:a2:79:b2:bd:db:37:02:7d:c6:63:75
+		7b:04:85:cf:99:35:7d:a9:0a:55:93:fc:f4:ce:3b:a2
+		2d:76:79:e4:b6:23:8f:4b:67:8e:e5:11:81:02:7c:86
+		6b:f4:b9:8c:6f:e9:ae:b4:97:31:68:51:51:f8:b3:0c
+		12:79:24:20:62:17:3f:fe:49:f1:d8:86:ae:fe:ea:17
+		a6:48:a3:86:50:74:86:2f:fe:3c:67:38:8c:f3:05:7f
+		3c:f2:52:03:66:6e:f9:2b:a0:63:10:e4:df:c6:77:85
+		30:0c:28:ea:eb:bb:c4:f6:de:02:14:78:e4:55:dd:0f
+		aa:ff:32:fb:1d:1f:92:f9:aa:d7:dc:c7:76:58:7c:21
+		85:93:2f:51:da:c3:6e:5b:a3:dc:4b:37:78:b9:90:c7
+		7c:93:cc:aa:98:34:93:02:fd:91:d6:53:27:3a:ae:06
+		27:8b:e3:56:40:c8:f0:ba:7e:0a:b3:0c:64:49:e5:28
+		de:6f:ba:1e:15:db:fa:a0:cf:05:fd:c9:0f:d4:83:01
+		8f:9b:e5:0c:35:c3:0c:5f:1a:a2:41:bf:5d:50:a2:fb
+		41:9c:7d:ad:66:e1:9d:dc:3f:c9:1f:c9:03:af:bb:a1
+		4e:2f:26:63:55:1a:af:77:96:87:8d:01:41:80:35:a0
+		b4:be:65:93:b9:69:70:c0:5b:b5:5f:ff:67:f8:0f:79
+Other Information:
+	Fingerprint:
+		sha1:b21e308938f4b6912cf7207c9d20e563fe7e4d8f
+		sha256:26b44bc560498aae13354748591b098a654955a6bd55704b83747981f3f59e30
+	Public Key ID:
+		sha1:6f68f74ba99034173e8bc66bb7510dba6d6b59d1
+		sha256:3291fafac9324d6db59b0d326ebcc57061a06714a0bd3407c8af016cc5aa8af7
+	Public Key PIN:
+		pin-sha256:MpH6+skyTW21mw0ybrzFcGGgZxSgvTQHyK8BbMWqivc=
+
+-----BEGIN CERTIFICATE-----
+MIIGFzCCA/+gAwIBAgIBATANBgkqhkiG9w0BAQsFADCBqDELMAkGA1UEBhMCUlUx
+EjAQBgNVBAgTCVRhdGFyc3RhbjESMBAGA1UEBxMJSW5ub3BvbGlzMR0wGwYDVQQK
+ExRJbm5vcG9saXMgVW5pdmVyc2l0eTEeMBwGA1UEAxMVU2hlbGtvdm5pa292IFZs
+YWRpbWlyMTIwMAYJKoZIhvcNAQkBFiN2LnNoZWxrb3ZuaWtvdkBpbm5vcG9saXMu
+dW5pdmVyc2l0eTAeFw0yMTExMTExMjIxMDZaFw0yNzExMTAxMjIxMDZaMIGMMQsw
+CQYDVQQGEwJSVTESMBAGA1UECBMJVGF0YXJzdGFuMR0wGwYDVQQKExRJbm5vcG9s
+aXMgVW5pdmVyc2l0eTEWMBQGA1UEAxMNVmxhZGltaXIgc3QxMjEyMDAGCSqGSIb3
+DQEJARYjdi5zaGVsa292bmlrb3ZAaW5ub3BvbGlzLnVuaXZlcnNpdHkwggIiMA0G
+CSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDfj05eyJnXwQ4YT3lT8lq+7+Hr4UY2
+qPztm6OfWqDNDKWsLEBGw/47RD/PbzanWhsYtWlozVy/qDXxYE89QJ3+ELDpGYID
+XtIvvl6OItFQBiWbp8zce2X8X0SOt6EwiRzBPzknw/vc56IwQ8gzNcTKm80tkk9p
+pAsGsrbaRDM9f+AAPxT/dyknZQRAeAqSwShID4cAYjJRy1eJdvbVOsmj0scWOLwV
+PL0y+mPqXeWPGq5UUlA4JP1clj/UUkekUL/gQ8SM8Qr7FkiO9d1IuPRduw7chlqQ
+U/t1/dN3hFHJBc2UN7tjc5rwN0/ZcKDhcjWjyF7FiHnD43ojyw+l3upf8cNILAAy
+OwFfeWLNHhzd4fLRwtbixx+ft0bMSSjVIsLfUJ0/RR6g2YmruPs13l8Q+M7nGjyz
+zvHPm/2nK3W+3+AAZ1mA1NAexen8HIDrMCN9aRKIdHrs7RsnbW6I/8MRg77f4tNc
+Wo62EHIpdPDYzv6XcofrQOp4rLxcljD1RmJ/D8OR+wr/fteu2wITZ2fPkpEJ9iRl
+S6hhWhLaNqZdypvDjyJUsPig99E3ixdtaMr681ooXP82CZRX5D6OylD9qCPhKSjx
+7ZjLARrEfSuFZye+xQ6jx8q87dvuulotRM+XYNq8h3DNHpChmN2r8x2yZKmGBzZ8
+SbEMFd6HOAtsSwIDAQABo2YwZDAdBgNVHQ4EFgQUiTuHXaoIr5P/PqoK+fQOgAW3
+FecwHwYDVR0jBBgwFoAUyOMXkr5d6wQ/80QTNP1uoj8VgNowEgYDVR0TAQH/BAgw
+BgEB/wIBATAOBgNVHQ8BAf8EBAMCAYYwDQYJKoZIhvcNAQELBQADggIBACgDQfkH
+RTp/Inh/bQIVyKVnEgq/j0/UqjzK6oRS7mnQXTX1ijGbu8dEcyv0sBHdzZnkVbbB
+jFvaQGphKXKOIPBhM4ALBx2CHdwy53U8uLjFth+ZqEt021lWnVT5C8NV+y3C38Sb
+6KgGyDKDXP+2CATmK/pHhMfDidxCaSWIfdII23iUF6FU+d0CCKwhjTqXoPm6AN9y
+6cNZ+AkB/ACTsqw0pdPx2z5uC2EvTJuVAe6sYCUhkrWKTGwj3unon4vrKaIIkwHj
+8xyy08a4Ln0jQb2Wp9zx8oBpriO76GDnkpWMb7Bug2XT2TlU8W7yTj1BnH5Ypf0H
+onmyvds3An3GY3V7BIXPmTV9qQpVk/z0zjuiLXZ55LYjj0tnjuURgQJ8hmv0uYxv
+6a60lzFoUVH4swwSeSQgYhc//knx2Iau/uoXpkijhlB0hi/+PGc4jPMFfzzyUgNm
+bvkroGMQ5N/Gd4UwDCjq67vE9t4CFHjkVd0Pqv8y+x0fkvmq19zHdlh8IYWTL1Ha
+w25bo9xLN3i5kMd8k8yqmDSTAv2R1lMnOq4GJ4vjVkDI8Lp+CrMMZEnlKN5vuh4V
+2/qgzwX9yQ/UgwGPm+UMNcMMXxqiQb9dUKL7QZx9rWbhndw/yR/JA6+7oU4vJmNV
+Gq93loeNAUGANaC0vmWTuWlwwFu1X/9n+A95
+-----END CERTIFICATE-----
+
+X.509 Certificate Information:
+	Version: 3
+	Serial Number (hex): 4b813446fe005730f5e8a4e76d7590e8138f637f
+	Issuer: EMAIL=v.shelkovnikov@innopolis.university,CN=Shelkovnikov Vladimir,O=Innopolis University,L=Innopolis,ST=Tatarstan,C=RU
+	Validity:
+		Not Before: Thu Nov 11 12:12:27 UTC 2021
+		Not After: Tue Nov 08 12:12:27 UTC 2033
+	Subject: EMAIL=v.shelkovnikov@innopolis.university,CN=Shelkovnikov Vladimir,O=Innopolis University,L=Innopolis,ST=Tatarstan,C=RU
+	Subject Public Key Algorithm: RSA
+	Algorithm Security Level: High (4096 bits)
+		Modulus (bits 4096):
+			00:e4:e5:7a:cd:72:ad:7e:96:9c:e4:28:2e:9d:2a:a5
+			f0:45:e2:2e:65:66:93:33:fd:7a:3c:a8:43:c2:97:4c
+			9b:87:11:0d:54:7b:2e:3d:23:fc:02:aa:29:d4:1c:19
+			f1:e4:7c:d0:58:9e:2c:a6:6f:32:65:92:4b:d6:11:d4
+			9a:20:8e:dd:06:fb:68:4d:3c:f4:ab:23:dd:d2:7d:c6
+			dd:3b:2a:a3:4b:73:bf:6d:43:3c:c1:b1:d2:b6:f7:71
+			ea:b8:dc:e2:d5:20:c8:52:be:c5:20:25:95:3e:67:c5
+			7f:fd:4c:40:11:5f:16:36:75:09:27:65:0b:83:a5:13
+			76:35:75:ea:6a:f9:4c:fa:23:2c:99:d9:92:f5:34:7d
+			76:2a:3c:79:13:07:90:13:b2:3b:bc:d7:5d:29:41:b9
+			95:6f:46:b5:61:c8:14:76:66:28:c9:95:07:a7:59:7a
+			ce:a4:a7:06:07:04:a0:fb:2a:11:15:3c:24:f1:0b:ef
+			be:10:98:09:04:f2:62:e1:73:20:7b:19:59:ed:fe:58
+			e7:36:21:16:d0:62:88:84:7c:c1:81:07:87:89:e4:97
+			0f:93:fd:5e:92:be:8c:87:d6:de:18:c8:c2:38:7d:3a
+			88:35:6e:70:33:8d:df:29:17:48:87:d6:a8:55:99:0a
+			17:78:1d:87:52:c0:c1:c0:0d:1e:6e:e8:75:8b:c4:0b
+			78:8c:8e:b8:18:f9:55:f6:38:58:d8:20:f6:f0:12:f5
+			20:9c:42:87:d9:4d:ff:0d:31:19:ad:aa:95:0e:42:0a
+			ed:9d:98:dc:72:97:0e:e2:1a:38:9f:d9:2a:0f:04:31
+			62:4a:99:17:b6:62:7c:18:30:ed:6f:57:8b:f9:15:3d
+			a1:03:a6:ff:e5:2b:d2:93:60:8f:6a:c4:b2:91:37:6a
+			5b:fc:93:87:73:92:8a:21:14:38:0a:a1:c2:55:fb:11
+			7a:0a:c0:fd:bf:d8:bc:98:ce:80:f9:8f:79:ee:68:91
+			29:bf:f3:c8:89:ff:5f:f4:0c:16:1e:97:87:e0:b4:2f
+			20:b1:f1:17:5e:90:0d:3c:37:25:8c:b6:a4:54:78:2e
+			5a:e4:ca:a8:39:c1:76:45:be:a9:a9:42:df:9e:9c:77
+			6c:86:c8:2e:84:b2:3f:ae:ed:5c:81:86:97:44:bf:a1
+			eb:dc:5d:aa:00:c0:2c:62:a2:57:76:22:65:12:0a:d7
+			7a:52:73:48:12:c0:0a:37:5f:dd:4c:53:67:cb:3c:3a
+			2b:08:93:ca:bb:39:7e:ca:f5:8f:2f:ac:3f:06:95:5f
+			84:db:67:8f:40:75:e2:40:f8:42:61:50:0b:ab:23:51
+			25
+		Exponent (bits 24):
+			01:00:01
+	Extensions:
+		Subject Key Identifier (not critical):
+			c8e31792be5deb043ff3441334fd6ea23f1580da
+		Authority Key Identifier (not critical):
+			c8e31792be5deb043ff3441334fd6ea23f1580da
+		Basic Constraints (critical):
+			Certificate Authority (CA): TRUE
+	Signature Algorithm: RSA-SHA256
+	Signature:
+		db:62:62:80:fc:d4:49:64:cf:a1:07:46:16:81:f0:e8
+		9c:75:04:11:42:25:dc:8c:61:b6:00:96:4e:86:42:39
+		c3:af:5e:84:c6:36:a2:c1:9b:3c:ec:d1:11:e5:bb:66
+		41:9f:e9:11:30:7f:47:2e:63:56:ee:18:4b:bd:db:6e
+		86:c6:f0:13:20:12:b6:15:5b:96:d5:0a:f2:ca:61:e4
+		b1:37:e2:ba:9f:02:67:97:19:42:8b:b2:64:3e:31:6d
+		b5:5a:db:eb:b7:de:d2:61:d8:17:64:e4:52:5c:4e:38
+		3d:8e:c9:90:d0:5f:01:7e:bf:b3:6e:ce:e0:09:c4:bb
+		21:e9:64:b1:5a:29:ea:71:83:00:2f:c7:be:16:32:de
+		e0:07:1b:20:c1:16:95:f6:84:30:f4:b9:92:1e:6a:c2
+		fd:9e:fc:25:08:75:6e:e7:b2:f7:df:11:48:a6:1f:6f
+		05:26:c4:23:fe:66:c2:fa:60:30:5b:73:87:ec:99:54
+		32:2d:ef:40:09:1a:bf:a6:ef:e5:d4:3d:d6:4a:f3:f7
+		42:2e:08:1a:6c:62:c6:f1:c5:32:9c:f1:5c:f8:e5:14
+		25:d1:c7:cf:e0:16:17:2c:89:13:25:82:2d:4c:e1:4a
+		31:d5:00:b0:0c:00:e0:63:a0:37:e1:ac:36:d8:ca:42
+		19:5c:91:4a:87:1e:14:f1:fc:50:20:4e:4e:2a:0b:b1
+		2f:78:56:ed:5c:63:1e:a4:ea:f9:82:27:0f:e6:f0:c8
+		31:f5:ec:e7:2d:05:b0:34:40:9e:14:bc:ea:0a:f5:60
+		6a:61:f1:58:60:34:a0:f5:fb:03:48:8b:9c:ea:cc:99
+		47:84:ad:ff:01:39:6b:6a:e3:4a:ba:bc:68:e6:19:b1
+		a5:c4:61:92:4b:c8:ac:71:ac:41:64:92:c4:65:a9:2d
+		a2:fc:9a:13:e8:2f:98:2d:37:b0:48:9d:27:71:d8:53
+		f4:68:23:64:6b:83:9b:18:b4:44:83:b3:97:2b:ee:4b
+		ea:dd:16:f4:01:e4:f0:ea:c1:6c:b7:3b:ce:ac:23:6b
+		0b:9b:a9:72:e2:6e:8b:18:d2:38:42:79:d7:f4:fb:00
+		bc:79:56:f9:fa:c6:18:6f:8e:fb:43:28:27:de:6f:5e
+		38:0b:9a:62:f5:b9:e1:99:75:b1:b7:e3:32:0c:67:49
+		1a:5c:75:31:4a:ea:aa:29:09:eb:71:94:56:e9:0c:34
+		6e:0b:05:4c:04:7f:3f:0b:dd:65:a6:97:b8:a5:61:e1
+		26:0d:aa:6f:56:71:0d:38:b5:73:36:3f:65:b6:0c:03
+		d5:a3:b1:8f:85:69:ab:65:cb:e0:ee:d1:d6:06:5f:45
+Other Information:
+	Fingerprint:
+		sha1:b26b717d162a2df6a2412f9b0916793f88304021
+		sha256:c8634472b809c4593ed03c5de111db67c04f2224a8869ddd5fcbd1f2c51e3940
+	Public Key ID:
+		sha1:c9faa04b4163662b85ff88924e1283e1828f6ab5
+		sha256:b3f2eec674dd1fc8e186464327c0ecb44ce6ec0b280f8dd5b643b2c5797817c1
+	Public Key PIN:
+		pin-sha256:s/LuxnTdH8jhhkZDJ8DstEzm7AsoD43VtkOyxXl4F8E=
+
+-----BEGIN CERTIFICATE-----
+MIIGMzCCBBugAwIBAgIUS4E0Rv4AVzD16KTnbXWQ6BOPY38wDQYJKoZIhvcNAQEL
+BQAwgagxCzAJBgNVBAYTAlJVMRIwEAYDVQQIEwlUYXRhcnN0YW4xEjAQBgNVBAcT
+CUlubm9wb2xpczEdMBsGA1UEChMUSW5ub3BvbGlzIFVuaXZlcnNpdHkxHjAcBgNV
+BAMTFVNoZWxrb3ZuaWtvdiBWbGFkaW1pcjEyMDAGCSqGSIb3DQEJARYjdi5zaGVs
+a292bmlrb3ZAaW5ub3BvbGlzLnVuaXZlcnNpdHkwHhcNMjExMTExMTIxMjI3WhcN
+MzMxMTA4MTIxMjI3WjCBqDELMAkGA1UEBhMCUlUxEjAQBgNVBAgTCVRhdGFyc3Rh
+bjESMBAGA1UEBxMJSW5ub3BvbGlzMR0wGwYDVQQKExRJbm5vcG9saXMgVW5pdmVy
+c2l0eTEeMBwGA1UEAxMVU2hlbGtvdm5pa292IFZsYWRpbWlyMTIwMAYJKoZIhvcN
+AQkBFiN2LnNoZWxrb3ZuaWtvdkBpbm5vcG9saXMudW5pdmVyc2l0eTCCAiIwDQYJ
+KoZIhvcNAQEBBQADggIPADCCAgoCggIBAOTles1yrX6WnOQoLp0qpfBF4i5lZpMz
+/Xo8qEPCl0ybhxENVHsuPSP8Aqop1BwZ8eR80FieLKZvMmWSS9YR1Jogjt0G+2hN
+PPSrI93SfcbdOyqjS3O/bUM8wbHStvdx6rjc4tUgyFK+xSAllT5nxX/9TEARXxY2
+dQknZQuDpRN2NXXqavlM+iMsmdmS9TR9dio8eRMHkBOyO7zXXSlBuZVvRrVhyBR2
+ZijJlQenWXrOpKcGBwSg+yoRFTwk8QvvvhCYCQTyYuFzIHsZWe3+WOc2IRbQYoiE
+fMGBB4eJ5JcPk/1ekr6Mh9beGMjCOH06iDVucDON3ykXSIfWqFWZChd4HYdSwMHA
+DR5u6HWLxAt4jI64GPlV9jhY2CD28BL1IJxCh9lN/w0xGa2qlQ5CCu2dmNxylw7i
+Gjif2SoPBDFiSpkXtmJ8GDDtb1eL+RU9oQOm/+Ur0pNgj2rEspE3alv8k4dzkooh
+FDgKocJV+xF6CsD9v9i8mM6A+Y957miRKb/zyIn/X/QMFh6Xh+C0LyCx8RdekA08
+NyWMtqRUeC5a5MqoOcF2Rb6pqULfnpx3bIbILoSyP67tXIGGl0S/oevcXaoAwCxi
+old2ImUSCtd6UnNIEsAKN1/dTFNnyzw6KwiTyrs5fsr1jy+sPwaVX4TbZ49AdeJA
++EJhUAurI1ElAgMBAAGjUzBRMB0GA1UdDgQWBBTI4xeSvl3rBD/zRBM0/W6iPxWA
+2jAfBgNVHSMEGDAWgBTI4xeSvl3rBD/zRBM0/W6iPxWA2jAPBgNVHRMBAf8EBTAD
+AQH/MA0GCSqGSIb3DQEBCwUAA4ICAQDbYmKA/NRJZM+hB0YWgfDonHUEEUIl3Ixh
+tgCWToZCOcOvXoTGNqLBmzzs0RHlu2ZBn+kRMH9HLmNW7hhLvdtuhsbwEyASthVb
+ltUK8sph5LE34rqfAmeXGUKLsmQ+MW21Wtvrt97SYdgXZORSXE44PY7JkNBfAX6/
+s27O4AnEuyHpZLFaKepxgwAvx74WMt7gBxsgwRaV9oQw9LmSHmrC/Z78JQh1buey
+998RSKYfbwUmxCP+ZsL6YDBbc4fsmVQyLe9ACRq/pu/l1D3WSvP3Qi4IGmxixvHF
+MpzxXPjlFCXRx8/gFhcsiRMlgi1M4Uox1QCwDADgY6A34aw22MpCGVyRSoceFPH8
+UCBOTioLsS94Vu1cYx6k6vmCJw/m8Mgx9eznLQWwNECeFLzqCvVgamHxWGA0oPX7
+A0iLnOrMmUeErf8BOWtq40q6vGjmGbGlxGGSS8iscaxBZJLEZaktovyaE+gvmC03
+sEidJ3HYU/RoI2Rrg5sYtESDs5cr7kvq3Rb0AeTw6sFstzvOrCNrC5upcuJuixjS
+OEJ51/T7ALx5Vvn6xhhvjvtDKCfeb144C5pi9bnhmXWxt+MyDGdJGlx1MUrqqikJ
+63GUVukMNG4LBUwEfz8L3WWml7ilYeEmDapvVnENOLVzNj9ltgwD1aOxj4Vpq2XL
+4O7R1gZfRQ==
+-----END CERTIFICATE-----
